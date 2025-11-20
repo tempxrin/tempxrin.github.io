@@ -65,7 +65,7 @@ p {
 a {
     text-decoration: none;
     color: inherit;
-    transition: var(--transition-fast);
+    transition: var(--transition);
 }
 
 ul {
@@ -188,7 +188,7 @@ img {
     width: 25px;
     height: 2px;
     background-color: var(--text-primary);
-    transition: var(--transition-base);
+    transition: var(--transition);
     border-radius: 2px;
 }
 
@@ -555,7 +555,7 @@ img {
 .timeline-date {
     display: inline-block;
     padding: 0.35rem 0.875rem;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-secondary);
     color: var(--text-secondary);
     border-radius: 20px;
     font-size: 0.85rem;
@@ -617,27 +617,32 @@ img {
     gap: var(--spacing-md);
 }
 
+/* CORREÇÃO CRÍTICA: Removido display: none dos project cards */
 .project-card {
     background-color: var(--bg-card);
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: border-color var(--transition);
-    display: none;
-}
-
-.project-card.active {
-    display: block;
+    transition: all var(--transition);
+    display: block; /* ALTERADO: era display: none */
+    opacity: 1; /* ALTERADO: garante que seja visível */
 }
 
 .project-card:hover {
     border-color: var(--accent-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow);
 }
 
 .project-card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    transition: transform var(--transition);
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
 }
 
 .project-info {
@@ -685,6 +690,12 @@ img {
     background-color: var(--accent-primary);
     border-color: var(--accent-primary);
     color: white;
+}
+
+/* ==================== NEWSLETTER ==================== */
+#newsletter .project-card {
+    display: block !important;
+    opacity: 1 !important;
 }
 
 /* ==================== CONTATO ==================== */
@@ -774,6 +785,18 @@ img {
     to { opacity: 1; }
 }
 
+/* ==================== CORREÇÕES GLOBAIS ==================== */
+/* Garante que todas as imagens dos projetos sejam visíveis */
+#projectsGrid .project-card {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Remove qualquer estilo problemático do Intersection Observer */
+.project-card[style*="opacity"] {
+    opacity: 1 !important;
+}
+
 /* ==================== RESPONSIVIDADE ==================== */
 @media (max-width: 768px) {
     h1 { font-size: 2.25rem; }
@@ -789,10 +812,6 @@ img {
     }
     
     .nav-menu {
-        justify-content: flex-start;
-    }
-    
-    .nav-menu {
         position: fixed;
         top: 70px;
         left: 0;
@@ -805,7 +824,7 @@ img {
         box-shadow: 0 4px 20px var(--shadow);
         border-bottom: 1px solid var(--border-color);
         transform: translateX(-100%);
-        transition: var(--transition-base);
+        transition: var(--transition);
     }
     
     .nav-menu.active {
@@ -871,10 +890,6 @@ img {
         left: 0;
     }
     
-    .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .courses-grid,
     .projects-grid,
     .contact-grid {
@@ -905,13 +920,5 @@ img {
     
     .hero-description {
         font-size: 1rem;
-    }
-    
-    .stat-number {
-        font-size: 2.5rem;
-    }
-    
-    .stats-grid {
-        grid-template-columns: 1fr;
     }
 }

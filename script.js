@@ -145,7 +145,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const courseCards = document.querySelectorAll('#coursesGrid .course-card');
     const coursePaginationBtns = document.querySelectorAll('#coursesPagination .pagination-btn');
     
-    // Mostrar apenas cursos da página 1 inicialmente
     function showCoursePage(pageNumber) {
         courseCards.forEach(card => {
             if (card.getAttribute('data-page') === pageNumber.toString()) {
@@ -155,7 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Atualizar botões ativos
         coursePaginationBtns.forEach(btn => {
             if (btn.getAttribute('data-page') === pageNumber.toString()) {
                 btn.classList.add('active');
@@ -165,10 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mostrar página 1 por padrão
     showCoursePage(1);
     
-    // Event listeners para os botões
     coursePaginationBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const page = parseInt(this.getAttribute('data-page'));
@@ -182,18 +178,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectCards = document.querySelectorAll('#projectsGrid .project-card');
     const projectPaginationBtns = document.querySelectorAll('#projetos .pagination-btn');
     
-    // Mostrar apenas projetos da página 1 inicialmente
     function showProjectPage(pageNumber) {
         projectCards.forEach(card => {
-            if (card.getAttribute('data-page') === pageNumber.toString()) {
+            const cardPage = card.getAttribute('data-page');
+            
+            if (cardPage === pageNumber.toString()) {
+                // MOSTRAR card com transição suave
                 card.style.display = 'block';
-                card.style.opacity = '1'; // ← CORREÇÃO AQUI
+                card.style.opacity = '1';
+                card.style.visibility = 'visible';
+                
+                // Pequeno delay para garantir o render
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 10);
             } else {
+                // ESCONDER card
                 card.style.display = 'none';
             }
         });
         
-        // Atualizar botões ativos
         projectPaginationBtns.forEach(btn => {
             if (btn.getAttribute('data-page') === pageNumber.toString()) {
                 btn.classList.add('active');
@@ -203,10 +207,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Mostrar página 1 por padrão
+    // Inicializar mostrando todos os projetos da página 1
     showProjectPage(1);
     
-    // Event listeners para os botões
     projectPaginationBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             const page = parseInt(this.getAttribute('data-page'));
@@ -230,8 +233,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, observerOptions);
     
-    // Observe cards
-    const cards = document.querySelectorAll('.timeline-item, .project-card, .contact-card');
+    // Observe apenas timeline e contact cards, NÃO os project cards
+    const cards = document.querySelectorAll('.timeline-item, .contact-card');
     cards.forEach(card => {
         card.style.opacity = '0.3';
         card.style.transition = 'opacity 0.3s ease';
@@ -247,19 +250,31 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.style.opacity = '0';
-                img.style.transition = 'opacity 0.5s ease';
                 
-                img.addEventListener('load', function() {
-                    img.style.opacity = '1';
-                });
+                // Só aplicar efeito se a imagem ainda não carregou
+                if (!img.complete) {
+                    img.style.opacity = '0';
+                    img.style.transition = 'opacity 0.5s ease';
+                    
+                    img.addEventListener('load', function() {
+                        img.style.opacity = '1';
+                    });
+                    
+                    img.addEventListener('error', function() {
+                        img.style.opacity = '1';
+                    });
+                }
                 
                 imageObserver.unobserve(img);
             }
         });
     });
     
-    images.forEach(img => imageObserver.observe(img));
+    images.forEach(img => {
+        if (!img.complete) {
+            imageObserver.observe(img);
+        }
+    });
 });
 
 // ==================== PERFORMANCE: Debounce Scroll Events ==================== 
