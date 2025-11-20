@@ -183,32 +183,31 @@ document.addEventListener('DOMContentLoaded', function() {
             const cardPage = card.getAttribute('data-page');
             
             if (cardPage === pageNumber.toString()) {
-                // MOSTRAR card com transição suave
                 card.style.display = 'block';
-                card.style.opacity = '1';
-                card.style.visibility = 'visible';
-                
-                // Pequeno delay para garantir o render
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                }, 10);
+                // FORÇA as imagens a ficarem visíveis
+                const img = card.querySelector('img');
+                if (img) {
+                    img.style.opacity = '1';
+                    img.style.transition = 'none';
+                }
             } else {
-                // ESCONDER card
                 card.style.display = 'none';
             }
         });
         
         projectPaginationBtns.forEach(btn => {
-            if (btn.getAttribute('data-page') === pageNumber.toString()) {
-                btn.classList.add('active');
-            } else {
-                btn.classList.remove('active');
-            }
+            btn.classList.toggle('active', btn.getAttribute('data-page') === pageNumber.toString());
         });
     }
     
-    // Inicializar mostrando todos os projetos da página 1
-    showProjectPage(1);
+    // INICIALIZAÇÃO - Garante que todas as imagens comecem visíveis
+    setTimeout(() => {
+        document.querySelectorAll('#projectsGrid img').forEach(img => {
+            img.style.opacity = '1';
+            img.style.transition = 'none';
+        });
+        showProjectPage(1);
+    }, 100);
     
     projectPaginationBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -218,64 +217,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ==================== INTERSECTION OBSERVER FOR ANIMATIONS ==================== 
-document.addEventListener('DOMContentLoaded', function() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-            }
-        });
-    }, observerOptions);
-    
-    // Observe apenas timeline e contact cards, NÃO os project cards
-    const cards = document.querySelectorAll('.timeline-item, .contact-card');
-    cards.forEach(card => {
-        card.style.opacity = '0.3';
-        card.style.transition = 'opacity 0.3s ease';
-        observer.observe(card);
-    });
-});
+// ==================== REMOVIDO: Intersection Observer Problemático ====================
 
-// ==================== LAZY LOADING IMAGES ==================== 
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('img[src]');
-    
-    const imageObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                
-                // Só aplicar efeito se a imagem ainda não carregou
-                if (!img.complete) {
-                    img.style.opacity = '0';
-                    img.style.transition = 'opacity 0.5s ease';
-                    
-                    img.addEventListener('load', function() {
-                        img.style.opacity = '1';
-                    });
-                    
-                    img.addEventListener('error', function() {
-                        img.style.opacity = '1';
-                    });
-                }
-                
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => {
-        if (!img.complete) {
-            imageObserver.observe(img);
-        }
-    });
-});
+// ==================== REMOVIDO: Lazy Loading Problemático ====================
 
 // ==================== PERFORMANCE: Debounce Scroll Events ==================== 
 function debounce(func, wait = 10, immediate = true) {
@@ -327,6 +271,17 @@ document.addEventListener('DOMContentLoaded', function() {
             navToggle.focus();
         }
     });
+});
+
+// ==================== CORREÇÃO DE EMERGÊNCIA PARA IMAGENS ====================
+document.addEventListener('DOMContentLoaded', function() {
+    // FORÇA todas as imagens a ficarem visíveis
+    setTimeout(() => {
+        document.querySelectorAll('img').forEach(img => {
+            img.style.opacity = '1';
+            img.style.visibility = 'visible';
+        });
+    }, 500);
 });
 
 console.log('%c João Daniel Temporin - Portfólio ', 'background: #3b82f6; color: #fff; font-size: 16px; padding: 10px; border-radius: 4px;');

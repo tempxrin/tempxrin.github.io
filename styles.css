@@ -617,15 +617,14 @@ img {
     gap: var(--spacing-md);
 }
 
-/* CORREÇÃO CRÍTICA: Removido display: none dos project cards */
 .project-card {
     background-color: var(--bg-card);
     border-radius: 8px;
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: all var(--transition);
-    display: block; /* ALTERADO: era display: none */
-    opacity: 1; /* ALTERADO: garante que seja visível */
+    display: block;
+    opacity: 1;
 }
 
 .project-card:hover {
@@ -638,6 +637,7 @@ img {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    opacity: 1 !important;
     transition: transform var(--transition);
 }
 
@@ -779,21 +779,19 @@ img {
     background-color: var(--accent-hover);
 }
 
-/* ==================== ANIMAÇÕES ==================== */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+/* ==================== CORREÇÕES CRÍTICAS ==================== */
+/* FORÇA todas as imagens a serem visíveis */
+img {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
-/* ==================== CORREÇÕES GLOBAIS ==================== */
-/* Garante que todas as imagens dos projetos sejam visíveis */
-#projectsGrid .project-card {
-    display: block !important;
+/* Remove qualquer estilo inline problemático */
+.project-card[style*="opacity"] {
     opacity: 1 !important;
 }
 
-/* Remove qualquer estilo problemático do Intersection Observer */
-.project-card[style*="opacity"] {
+.project-card img[style*="opacity"] {
     opacity: 1 !important;
 }
 
