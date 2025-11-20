@@ -1,2811 +1,427 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="João Daniel Temporin - Analista de Business Intelligence especializado em transformar dados em insights estratégicos">
     <title>João Daniel Temporin - Portfólio</title>
-
-        <!-- Google Analytics -->
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JGHTH9NP6H"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-JGHTH9NP6H');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-JGHTH9NP6H');
     </script>
     
-    <!-- Fonte Montserrat -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/icone-aba.png" type="image/png">
-    <style>
-        /* MENU FIXO E RESPONSIVO */
-        .sticky-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: transparent;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        /* Estilo dos links do menu */
-        .sticky-menu a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            transition: color 0.3s ease, background-color 0.3s ease;
-            border-bottom: 2px solid transparent;
-            /* Adicionado para evitar saltos quando hover/active */
-        }
-
-        /* Botão de menu (hambúrguer) */
-        .menu-button {
-            cursor: pointer;
-            display: none;
-            /* Oculto em telas grandes */
-            align-items: center;
-            z-index: 1001;
-            background: none;
-            border: none;
-            outline: none;
-        }
-
-        .menu-icon {
-            position: relative;
-            width: 22px;
-            height: 2px;
-            background-color: white;
-            transition: background-color 0.3s;
-        }
-
-        .menu-icon::before,
-        .menu-icon::after {
-            content: '';
-            position: absolute;
-            width: 22px;
-            height: 2px;
-            background-color: white;
-            transition: transform 0.3s;
-        }
-
-        .menu-icon::before {
-            transform: translateY(-7px);
-        }
-
-        .menu-icon::after {
-            transform: translateY(7px);
-        }
-
-        /* Estilo para o botão quando o menu está aberto */
-        .menu-open .menu-icon {
-            background-color: transparent;
-        }
-
-        .menu-open .menu-icon::before {
-            transform: rotate(45deg);
-        }
-
-        .menu-open .menu-icon::after {
-            transform: rotate(-45deg);
-        }
-
-        .menu-text {
-            margin-left: 8px;
-            color: white;
-            font-size: 14px;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        /* Container para os itens do menu */
-        .menu-items {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        /* Quando o fundo do menu for branco */
-        .sticky-menu.white-background {
-            background-color: rgba(255, 255, 255, 0.95);
-            left: 0;
-            right: 0;
-            width: 100%;
-            margin: 0;
-            padding: 10px 20px;
-        }
-
-        /* Quando o fundo for branco, a cor do texto volta para azul */
-        .sticky-menu.white-background a,
-        .sticky-menu.white-background .menu-text {
-            color: #005b96;
-        }
-
-        .sticky-menu.white-background .menu-icon,
-        .sticky-menu.white-background .menu-icon::before,
-        .sticky-menu.white-background .menu-icon::after {
-            background-color: #005b96;
-        }
-
-        .sticky-menu.white-background .menu-open .menu-icon {
-            background-color: transparent;
-        }
-
-        /* Hover do link do menu */
-        .sticky-menu a:hover {
-            background-color: #005b96;
-            color: white;
-            border-radius: 8px;
-        }
-
-        /* ITEM ATIVO COM DESTAQUE - AJUSTADO */
-        .menu-items a.active {
-            border-bottom: 2px solid #005b96;
-            color: #005b96;
-            font-weight: bold;
-        }
-
-        /* Garantir que apenas a classe active aplique o estilo */
-        .menu-items a:not(.active) {
-            border-bottom: 2px solid transparent;
-        }
-
-        /* Media queries para tornar o menu responsivo */
-        @media screen and (max-width: 768px) {
-
-            /* Remover barrinhas brancas */
-            html,
-            body {
-                overflow-x: hidden;
-                width: 100%;
-                margin: 0;
-                padding: 0;
-            }
-
-            /* Mostrar botão de menu em telas pequenas e posicionar à esquerda */
-            .menu-button {
-                display: flex;
-                position: absolute;
-                top: 15px;
-                left: 20px;
-                right: auto;
-            }
-
-            /* Reorganizar layout do menu em telas pequenas */
-            .sticky-menu {
-                flex-direction: column;
-                align-items: center;
-                padding: 10px 0;
-                width: 100vw;
-                /* Largura total da viewport */
-                max-width: 100%;
-                /* Garantir que não exceda a largura */
-                left: 0;
-                right: 0;
-                margi n: 0;
-            }
-
-
-
-            /* Comportamento padrão dos itens de menu em tela pequena (oculto) */
-            .menu-items {
-                display: none !important;
-                /* Inicialmente oculto */
-                flex-direction: column;
-                width: 100vw;
-                /* Largura total da viewport */
-                max-width: 100%;
-                /* Garantir que não exceda a largura */
-                align-items: center;
-                justify-content: center;
-                background-color: rgba(0, 0, 0, 0.9);
-                /* Fundo escuro para o menu */
-                padding: 30px 0 15px 0;
-                margin: 0;
-                position: fixed;
-                /* Alterado de relative para fixed */
-                top: 0;
-                /* Posiciona no topo da tela */
-                left: 0;
-                right: 0;
-                height: 100%;
-                /* Altura total da tela */
-                box-sizing: border-box;
-                z-index: 999;
-                /* Menor que o botão do menu */
-            }
-
-            /* Quando o menu está aberto em telas pequenas */
-            .menu-open .menu-items {
-                display: flex !important;
-                /* Força a exibição quando o menu está aberto */
-            }
-
-            /* Estilo dos links no menu móvel */
-            .menu-items a {
-                width: 100%;
-                /* Ocupa 100% da largura */
-                text-align: center;
-                padding: 15px 0;
-                border-top: 1px solid rgba(255, 255, 255, 0.1);
-                margin: 0;
-                box-sizing: border-box;
-            }
-
-            .sticky-menu.white-background {
-                background-color: rgba(255, 255, 255, 0.95);
-                width: 100vw;
-                max-width: 100%;
-                box-sizing: border-box;
-                left: 0;
-                right: 0;
-                margin: 0;
-                padding: 10px 0;
-            }
-
-            .sticky-menu.white-background .menu-items {
-                background-color: rgba(255, 255, 255, 0.95);
-                width: 100vw;
-                max-width: 100%;
-            }
-
-            .sticky-menu.white-background .menu-items a {
-                border-top: 1px solid rgba(0, 91, 150, 0.1);
-            }
-
-            .menu-items a:hover {
-                border-radius: 0;
-                /* Remove border-radius no mobile */
-            }
-        }
-
-        /* Para telas maiores */
-        @media screen and (min-width: 769px) {
-            .menu-items a {
-                padding: 15px 15px;
-                border-top: none;
-            }
-
-            .menu-button {
-                display: none !important;
-                /* Garante que o botão menu esteja oculto em telas grandes */
-            }
-
-            .menu-items {
-                display: flex !important;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                background: transparent;
-                width: 100%;
-                padding: 0;
-                margin: 0 auto;
-            }
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body,
-        h1,
-        h2,
-        h3,
-        p,
-        button {
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        h2,
-        h3 {
-            text-transform: uppercase;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom right, #e9f1ff, #f0f4ff);
-            color: #1b1f3b;
-            line-height: 1.6;
-        }
-
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            background-image: url('https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/background-hero-section.svg');
-            background-position: center;
-            background-size: cover;
-            color: white;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-
-        .nav {
-            display: none;
-        }
-
-        .hero-content {
-            position: relative;
-            text-align: center;
-            max-width: 90%;
-            z-index: 2;
-            padding: 20px;
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin: 0;
-            text-transform: uppercase;
-        }
-
-        .hero-content h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-top: 10px;
-            text-transform: uppercase;
-        }
-
-        .hero-content p {
-            font-size: 1rem;
-            margin: 20px auto 0;
-            line-height: 1.6;
-            text-transform: uppercase;
-            max-width: 600px;
-        }
-
-        .no-wrap {
-            white-space: nowrap;
-            font-size: 3rem;
-        }
-
-        .hero-content h1.no-wrap {
-            font-size: 3rem;
-        }
-
-        .highlight {
-            font-size: 3rem;
-            text-transform: uppercase;
-        }
-
-        /* Media queries para responsividade */
-        @media screen and (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content h1.no-wrap {
-                font-size: 2rem;
-                white-space: normal;
-                /* Permite quebra de linha se necessário */
-            }
-
-            .highlight {
-                font-size: 1.8rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.2rem;
-            }
-
-            .hero-content p {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Para telas muito pequenas */
-        @media screen and (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero-content h1.no-wrap {
-                font-size: 1.8rem;
-            }
-
-            .highlight {
-                font-size: 1.6rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1rem;
-                margin-top: 8px;
-            }
-
-            .hero-content p {
-                font-size: 0.85rem;
-                margin-top: 15px;
-            }
-        }
-
-        .baixar-cv {
-            background-color: transparent;
-            color: #005b96;
-            padding: 12px 24px;
-            border: 2px solid #005b96;
-            border-radius: 8px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            display: block;
-            margin: 30px auto 0;
-        }
-
-        .baixar-cv:hover {
-            background-color: #005b96;
-            color: white;
-        }
-
-
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.2rem;
-            }
-
-            .highlight {
-                font-size: 2rem;
-            }
-        }
-
-        .social-icons {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .social-icons a svg {
-            fill: white;
-            width: 40px;
-            height: 40px;
-            transition: fill 0.3s;
-        }
-
-        .social-icons a:hover svg {
-            fill: #005b96;
-        }
-
-        .section {
-            padding: 50px 20px;
-            background-color: #f5f5f5;
-        }
-
-        .section h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #005b96;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .sobre-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            margin-top: 30px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .sobre-container .top-content {
-            display: flex;
-            flex-direction: row;
-            gap: 40px;
-            justify-content: center;
-            align-items: flex-start;
-            width: 100%;
-        }
-
-        .sobre-container img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #005b96;
-            flex-shrink: 0;
-        }
-
-        .sobre-container .text-content {
-            text-align: justify;
-            max-width: 600px;
-            padding: 20px;
-            font-size: 1rem;
-            color: #1b1f3b;
-            line-height: 1.8;
-        }
-
-        .info-skills {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 30px;
-            width: 100%;
-        }
-
-        .personal-info,
-        .hard-skills {
-            background: #fff;
-            color: #1b1f3b;
-            padding: 20px;
-            border-radius: 5px;
-            width: 340px;
-        }
-
-        .personal-info h3,
-        .hard-skills h3 {
-            margin-top: 0;
-            color: #005b96;
-        }
-
-        .personal-info p {
-            margin: 10px 0;
-        }
-
-
-
-        </section>< !-- Estilos para a seção de Cursos --><style>
-
-        /* Seção de Cursos */
-        .cursos.section {
-            background-color: #f5f5f5;
-            padding: 60px 20px;
-        }
-
-        .cursos-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .cursos-wrapper {
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 30px;
-            min-height: 450px;
-        }
-
-        .curso-set {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .curso-card {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            display: flex;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .curso-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .curso-icon {
-            background-color: rgba(0, 91, 150, 0.1);
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-
-        .curso-content {
-            padding: 20px;
-            flex: 1;
-        }
-
-        .curso-content h3 {
-            color: #005b96;
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-
-        .curso-instituicao {
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        .curso-data {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-        }
-
-        .curso-descricao {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .cursos-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-        }
-
-        .curso-set-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 2px solid #005b96;
-            background-color: white;
-            color: #005b96;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .curso-set-btn.active {
-            background-color: #005b96;
-            color: white;
-        }
-
-        .curso-set-btn:hover {
-            background-color: #005b96;
-            color: white;
-            /* <<< adicionado */
-        }
-
-        .curso-descricao {
-            text-align: justify;
-        }
-
-        @media screen and (max-width: 768px) {
-            .curso-set {
-                grid-template-columns: 1fr;
-            }
-
-            .curso-card {
-                flex-direction: column;
-            }
-
-            .curso-icon {
-                padding: 15px;
-                justify-content: flex-start;
-            }
-        }
-
-        /* Seção Formação */
-        .formacao-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            padding: 20px 0;
-        }
-
-        .formacao-item {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            padding: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .formacao-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .formacao-item h3 {
-            font-size: 1.4rem;
-            color: #005b96;
-            margin-bottom: 5px;
-            text-transform: uppercase;
-        }
-
-        .formacao-item p {
-            font-size: 1.1rem;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .formacao-data {
-            display: inline-block;
-            background-color: rgba(0, 91, 150, 0.1);
-            color: #005b96;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-top: 10px;
-        }
-
-        /* Estilos para a seção de Contato com botões */
-        #contato.section {
-            min-height: 70vh;
-            background-color: #f5f5f5;
-            padding: 60px 20px;
-        }
-
-        .contato-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0;
-            background-color: transparent;
-            box-shadow: none;
-        }
-
-        .contato-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .contato-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .contato-item svg {
-            width: 30px;
-            height: 30px;
-            stroke: #005b96;
-            margin-right: 15px;
-            flex-shrink: 0;
-        }
-
-        .contato-info {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .contato-info strong {
-            color: #005b96;
-            font-size: 1.1rem;
-            margin-bottom: 2px;
-        }
-
-        .contato-info span {
-            color: #333;
-            font-size: 1rem;
-        }
-
-        .contato-btn {
-            background-color: #005b96;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
-        }
-
-        .contato-btn:hover {
-            background-color: #003d66;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0, 91, 150, 0.3);
-        }
-
-        /* Variantes de botões */
-        .whatsapp-btn {
-            background-color: #25D366;
-        }
-
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
-        }
-
-        .linkedin-btn {
-            background-color: #0077B5;
-        }
-
-        .linkedin-btn:hover {
-            background-color: #005e93;
-        }
-
-        .location-btn {
-            background-color: #DB4437;
-        }
-
-        .location-btn:hover {
-            background-color: #b33228;
-        }
-
-        /* Media query para responsividade */
-        @media screen and (max-width: 768px) {
-            .contato-item {
-                flex-direction: column;
-                align-items: flex-start;
-                text-align: left;
-            }
-
-            .contato-item svg {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-
-            .contato-info {
-                margin-bottom: 15px;
-                width: 100%;
-            }
-
-            .contato-btn {
-                width: 100%;
-                text-align: center;
-                white-space: normal;
-                /* Permite que o texto quebre em várias linhas */
-                font-size: 0.8rem;
-                /* Reduz o tamanho da fonte no mobile */
-                padding: 8px 10px;
-                /* Reduz o padding para tornar o botão mais compacto */
-                box-sizing: border-box;
-                /* Garante que padding não aumente a largura total */
-                margin-top: 5px;
-                /* Adiciona um pequeno espaço acima do botão */
-                display: block;
-                /* Garante que o botão ocupe toda a largura disponível */
-            }
-        }
-
-        /* Para telas ainda menores (smartphones pequenos) */
-        @media screen and (max-width: 480px) {
-            .contato-btn {
-                font-size: 0.75rem;
-                /* Reduz ainda mais a fonte para telas muito pequenas */
-                padding: 7px 8px;
-                /* Reduz ainda mais o padding */
-            }
-        }
-
-        /* Skill bars - MODIFICADO: Aumentada a altura do container */
-        .skills-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 620px;
-            /* Aumentado para mostrar todas as 5 barras com os níveis */
-        }
-
-        .skill-set {
-            width: 100%;
-            position: absolute;
-            left: 0;
-            top: 0;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .skills-container .skill {
-            margin-bottom: 40px;
-            /* Aumentado para acomodar o indicador acima */
-            position: relative;
-        }
-
-        .skills-container {
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-            height: 380px;
-            /* Ajustado para acomodar o novo layout */
-        }
-
-        .skill-bar {
-            width: 100%;
-            height: 10px;
-            background: #ddd;
-            border-radius: 5px;
-            overflow: visible;
-            /* Alterado de 'hidden' para 'visible' para mostrar o nível fora da barra */
-            position: relative;
-        }
-
-        .skill-percentage {
-            height: 100%;
-            background: #005b96;
-            width: 0;
-            transition: width 0.5s ease;
-            border-radius: 5px;
-        }
-
-        /* Ajusta a posição do texto de nível de habilidade */
-        .skill-level {
-            position: absolute;
-            top: -5px;
-            /* Aumenta a distância entre a barra e o nível de habilidade */
-            left: 50%;
-            /* Centraliza o texto na barra */
-            transform: translateX(-50%);
-            /* Centraliza o texto horizontalmente */
-            background: none;
-            /* Remove o fundo */
-            color: #005b96;
-            /* Cor do texto */
-            padding: 2px 6px;
-            /* Pequeno espaçamento */
-            border-radius: 3px;
-            /* Bordas arredondadas */
-            font-size: 0.75rem;
-            /* Tamanho da fonte */
-            font-weight: bold;
-            /* Peso da fonte */
-            z-index: 1;
-            /* Garante que o texto não fique sobre a barra */
-        }
-
-        /* Remove o triângulo */
-        .skill-level:after {
-            display: none;
-        }
-
-
-        .skills-buttons {
-            text-align: center;
-            margin-top: 15px;
-        }
-
-        /* MODIFICADO: Ajustado o estilo dos botões */
-        .skill-set-btn {
-            border: none;
-            background: #ddd;
-            width: 30px;
-            height: 30px;
-            margin: 0 5px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: background 0.3s, color 0.3s;
-            color: #1b1f3b;
-            /* Cor padrão do texto */
-        }
-
-        .skill-set-btn.active {
-            background: #005b96;
-            color: white;
-            /* Texto branco quando ativo */
-        }
-
-        /* Botão de voltar ao topo */
-        #back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #005b96;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: opacity 0.3s;
-            opacity: 0.7;
-            width: 40px;
-            /* Alterado para formato quadrado */
-            height: 40px;
-            /* Alterado para formato quadrado */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #back-to-top:hover {
-            opacity: 1;
-        }
-
-        footer {
-            background-color: #1b1f3b;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        footer a {
-            color: #e6007e;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        @media screen and (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-content h2 {
-                font-size: 1.2rem;
-            }
-
-            .nav {
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .sobre-container .top-content {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .info-skills {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        @keyframes fadeInUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero-content h1,
-        .hero-content h2,
-        .hero-content p {
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .nav a:hover {
-            background-color: #005b96;
-            color: white;
-            box-shadow: 0 4px 15px rgba(0, 91, 150, 0.4);
-        }
-
-        /* Estilos para a seção de Experiência */
-        .experience-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 40px auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background-color: #005b96;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease forwards;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            right: -12px;
-            background-color: white;
-            border: 4px solid #005b96;
-            top: 20px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd)::after {
-            right: -17px;
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -17px;
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: white;
-            position: relative;
-            border-radius: 6px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            border-right: 5px solid #005b96;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            border-left: 5px solid #005b96;
-        }
-
-        .timeline-content h3 {
-            margin-top: 0;
-            color: #005b96;
-            font-size: 1.3rem;
-        }
-
-        .timeline-content .date {
-            display: inline-block;
-            background-color: #005b96;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-
-        .timeline-content .company {
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .timeline-content p {
-            margin: 10px 0 0;
-            line-height: 1.6;
-            color: #555;
-        }
-
-        .timeline-content ul {
-            margin-top: 10px;
-            padding-left: 20px;
-        }
-
-        .timeline-content ul li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-
-        /* Media Queries para Responsividade */
-        @media screen and (max-width: 768px) {
-            .timeline::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item:nth-child(odd)::after,
-            .timeline-item:nth-child(even)::after {
-                left: 18px;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                border-left: 5px solid #005b96;
-                border-right: none;
-            }
-        }
-
-        .portfolio {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .portfolio-item {
-            width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-item a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.05);
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            /* agora preenche o espaço todo */
-            border-radius: 8px;
-            background-color: #f7f7f7;
-        }
-
-
-        .portfolio-caption {
-            background-color: #ffffff;
-            padding: 15px;
-            text-align: center;
-            font-weight: bold;
-            color: #333;
-            height: 81.19px;
-            /* altura fixa */
-            display: flex;
-            /* centraliza verticalmente */
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .pagination-buttons {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .custom-button {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: transparent;
-            color: #005b96;
-            border: 2px solid #005b96;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 0 5px;
-        }
-
-        .custom-button:hover {
-            background-color: #005b96;
-            color: white;
-        }
-
-        .custom-button.active-page {
-            background-color: #005b96;
-            color: white;
-        }
-
-        /* Estilo do footer */
-        .footer {
-            background-color: #ffffff;
-            /* Fundo branco */
-            padding: 20px 0;
-            /* Espaçamento interno */
-            text-align: center;
-            font-size: 14px;
-            color: #333;
-            /* Cor do texto */
-            margin-top: 40px;
-            /* Espaço superior */
-        }
-
-        .footer .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .footer p {
-            margin: 0;
-        }
-
-        .footer a {
-            text-decoration: none;
-            color: #005b96;
-            /* Cor do link */
-            margin-left: 10px;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-
-        .footer a:hover {
-            color: #0077b6;
-            /* Cor ao passar o mouse */
-        }
-
-        .footer .github-link i {
-            margin-right: 5px;
-            font-size: 18px;
-            /* Tamanho do ícone */
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-    
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <!-- Menu Fixo -->
-    <div id="sticky-menu" class="sticky-menu">
-        <div class="menu-button" onclick="toggleMenu()">
-            <span class="menu-icon"></span>
-            <span class="menu-text">Menu</span>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">JDT<span>.</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+                <li><a href="#formacao" class="nav-link">Formação</a></li>
+                <li><a href="#cursos" class="nav-link">Cursos</a></li>
+                <li><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#newsletter" class="nav-link">Newsletter</a></li>
+                <li><a href="#contato" class="nav-link btn-nav">Contato</a></li>
+            </ul>
         </div>
-        <div class="menu-items">
-            <a href="#sobre">Sobre Mim</a>
-            <a href="#experiencia">Experiência</a>
-            <a href="#formacao">Formação</a>
-            <a href="#cursos">Cursos</a>
-            <a href="#projetos">Projetos</a>
-            <a href="#newsletter">Newsletter</a>
-            <a href="#contato">Contato</a>
-        </div>
-    </div>
+    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero" id="home">
         <div class="hero-content">
-            <p>
-            <div class="highlight">BEM-VINDO AO MEU PORTFÓLIO!</div>
-            </p>
-            <h1 class="no-wrap">EU SOU O</h1>
-            <h1 class="no-wrap">JOÃO DANIEL TEMPORIN</h1>
-            <h2>Analista de Dados | Cientista de Dados</h2>
-            <p>Transformo dados em insights estratégicos.</p>
-
-            <!-- Ícones Sociais -->
-            <div class="social-icons">
-                <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/joao-temporin/" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 
-                    5v14c0 2.761 2.239 5 5 5h14c2.761 
-                    0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 
-                    19h-3v-10h3v10zm-1.5-11.268c-.966 
-                    0-1.75-.784-1.75-1.75s.784-1.75 
-                    1.75-1.75 1.75.784 1.75 1.75-.784 
-                    1.75-1.75 1.75zm13.5 
-                    11.268h-3v-5.604c0-1.337-.026-3.061-1.865-3.061-1.867 
-                    0-2.153 1.459-2.153 2.963v5.702h-3v-10h2.881v1.367h.041c.401-.761 
-                    1.379-1.561 2.838-1.561 3.034 0 3.594 1.996 
-                    3.594 4.591v5.603z" />
-                    </svg>
+            <p class="hero-greeting">Olá, eu sou</p>
+            <h1 class="hero-title">João Daniel Temporin</h1>
+            <p class="hero-subtitle"><span id="typingText"></span><span class="cursor">|</span></p>
+            <p class="hero-description">Profissional focado em projetar soluções analíticas que traduzem informações em ações mensuráveis.</p>
+            <div class="hero-buttons">
+                <a href="#contato" class="btn btn-primary">Entre em Contato</a>
+                <a href="https://drive.google.com/file/d/1Nvn8186fzGLGbax6L-JrqMmvkNAkORoZ/view?usp=sharing" target="_blank" class="btn btn-secondary">Baixar CV</a>
+            </div>
+            <div class="hero-social">
+                <a href="https://www.linkedin.com/in/joao-temporin/" target="_blank" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.061-1.865-3.061-1.867 0-2.153 1.459-2.153 2.963v5.702h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.561 2.838-1.561 3.034 0 3.594 1.996 3.594 4.591v5.603z"/></svg>
                 </a>
-
-                <!-- GitHub -->
-                <a href="https://github.com/tempxrin" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 0C5.37 0 0 5.373 0 12c0 5.302 
-                    3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 
-                    0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 
-                    1.205.085 1.84 1.236 1.84 1.236 1.07 1.834 
-                    2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.933 
-                    0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 
-                    0 0 1.008-.322 3.3 1.23a11.5 11.5 0 013.003-.404c1.018.005 2.045.138 
-                    3.003.404 2.29-1.552 3.296-1.23 
-                    3.296-1.23.655 1.653.243 2.873.12 3.176.77.84 
-                    1.234 1.91 1.234 3.22 0 4.61-2.807 
-                    5.63-5.48 5.922.43.372.823 1.102.823 2.222 
-                    0 1.606-.014 2.898-.014 3.293 
-                    0 .32.216.694.825.576C20.565 21.796 24 
-                    17.298 24 12c0-6.627-5.373-12-12-12z" />
-                    </svg>
+                <a href="https://github.com/tempxrin" target="_blank" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.236 1.84 1.236 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.467-1.334-5.467-5.933 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.625-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.217.694.825.576C20.565 21.795 24 17.295 24 12c0-6.627-5.373-12-12-12"/></svg>
                 </a>
-
-                <!-- WhatsApp -->
-                <a href="https://wa.me/5543936180456?text=Ol%C3%A1%2C%20Jo%C3%A3o!" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                        <path d="M16.001 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.773.906 
-                    5.387 2.427 7.515L2.667 29.333l5.962-2.361A13.261 13.261 
-                    0 0016 29.333C23.36 29.333 29.333 23.36 29.333 16 
-                    29.333 8.64 23.36 2.667 16.001 2.667zm0 
-                    24c-2.266 0-4.387-.667-6.167-1.814l-.44-.28-3.547 
-                    1.408 1.334-3.454-.293-.453A10.587 10.587 
-                    0 015.334 16c0-5.88 4.786-10.666 10.667-10.666 
-                    5.88 0 10.666 4.786 10.666 10.666S21.88 
-                    26.667 16.001 26.667zm5.427-7.787c-.294-.147-1.733-.854-2-0.951-.267-.098-.467-.146-.667.146-.2.294-.76.951-.933 
-                    1.146-.173.2-.347.22-.64.073-.294-.147-1.24-.457-2.36-1.457-.873-.78-1.466-1.74-1.64-2.034-.173-.294-.02-.453.127-.6.13-.13.294-.34.44-.507.146-.173.2-.294.3-.487.1-.194.05-.366-.025-.513-.074-.147-.667-1.613-.914-2.213-.24-.6-.48-.52-.667-.52-.173 0-.366-.02-.56-.02-.194 0-.507.073-.773.367-.267.294-1.013.987-1.013 
-                    2.407s1.04 2.794 1.187 2.987c.146.194 2.053 3.14 
-                    4.974 4.4.694.3 1.234.48 1.653.613.694.22 1.32.187 
-                    1.813.113.553-.08 1.733-.707 1.98-1.387.24-.68.24-1.26.167-1.387-.073-.127-.267-.2-.56-.34z" />
-                    </svg>
+                <a href="https://wa.me/5543936180456" target="_blank" aria-label="WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
                 </a>
             </div>
         </div>
     </section>
 
-
-
-    <!-- Sobre Mim - Detalhado -->
-    <section id="sobre" class="section">
-        <h2>Sobre Mim</h2>
-        <div class="sobre-container">
-            <div class="top-content">
-                <img src="https://i.ibb.co/cXSFYXVp/Any-Conv-com-1725241175215-2.jpg" alt="Foto de João Daniel Temporin">
-                <div class="text-content">
-                    <p>
-                        Sou um entusiasta da área de <strong>Dados</strong>, <strong>IA</strong> e <strong>Data Science</strong>. Meu foco é transformar dados em insights que possam contribuir para tomadas de decisões mais estratégicas.
-                    </p>
-                    <p>
-                        Meus conhecimentos técnicos baseiam-se em <strong>Estatística</strong>, <strong>Ciência de Dados</strong>, <strong>Data Visualization</strong>, <strong>RPA</strong>, <strong>Web Scraping</strong>, <strong>Big Data</strong>, <strong>Cloud</strong>, <strong>Business Analytics</strong>, <strong>ETL</strong> e <strong>Banco de Dados</strong>. Busco sempre aplicar cada um desses conceitos de forma com que entregue valor e dê suporte para a geração da cultura data-driven dentro do ambiente corporativo.
-                    </p>
+    <section class="section section-alt" id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://i.ibb.co/cXSFYXVp/Any-Conv-com-1725241175215-2.jpg" alt="João Daniel Temporin">
                 </div>
-            </div>
-
-            <!-- Informações Pessoais e Hard Skills -->
-            <div class="info-skills">
-                <!-- Informações Pessoais -->
-                <div class="personal-info">
-                    <h3>INFORMAÇÕES PESSOAIS</h3>
-                    <p><strong>Nome:</strong> João Daniel Temporin</p>
-                    <p><strong>Data de Nascimento:</strong> 18 de maio de 2004</p>
-                    <p><strong>Localização:</strong> Rolândia, Paraná</p>
-                    <p><strong>Profissão:</strong> Analista de Business Intelligence Pleno</p>
-                    <p><strong>Idiomas:</strong> Inglês Básico</p>
-                </div>
-
-                <!-- Hard Skills -->
-                <div class="hard-skills">
-                    <h3>HARD SKILLS</h3>
-                    <div class="skills-container">
-                        <!-- Skill Set 1 -->
-                        <div class="skill-set" id="skill-set-0">
-                            <div class="skill">
-                                <div class="skill-label">Power BI</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Looker Studio</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Matplotlib</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Seaborn</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Streamlit</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 60%;">Intermediário</div>
-                            </div>
+                <div class="about-content">
+                    <h3>Analista de BI & Cofundador da Wize Analytics</h3>
+                    <p>Focado em projetar, estruturar e analisar grandes volumes de dados, convertendo informações dispersas em métricas claras, modelos analíticos e evidências confiáveis que sustentam decisões estratégicas e melhorias operacionais em toda a organização.</p>
+                    <p>Expertise em <strong>Power BI</strong>, <strong>Python</strong>, <strong>SQL</strong>, <strong>ETL</strong>, <strong>RPA</strong>, <strong>Airflow</strong>, <strong>Docker</strong>, <strong>Estatística</strong>, <strong>Streamlit</strong> e <strong>HTML/CSS</strong>.</p>
+                    <div class="about-info">
+                        <div class="info-item">
+                            <strong>Localização:</strong> Londrina, PR
                         </div>
-
-                        <!-- Skill Set 2 -->
-                        <div class="skill-set" id="skill-set-1">
-                            <div class="skill">
-                                <div class="skill-label">Python</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">SQL</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Microsoft Excel</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Web Scraping</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 60%;">Intermediário</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Big Query</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 60%;">Intermediário</div>
-                            </div>
+                        <div class="info-item">
+                            <strong>Idade:</strong> 21 anos
                         </div>
-
-                        <!-- Skill Set 3 -->
-                        <div class="skill-set" id="skill-set-2" style="transform: translateX(100%);">
-                            <div class="skill">
-                                <div class="skill-label">Pandas</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">NumPy</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="right: 60%;">Intermediário</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">SQL Developer</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="right: 60%;">Intermediário</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">PostgreSQL</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="right: 60%;">Intermediário</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Git e Github</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 20%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 40%;">Básico</div>
-                            </div>
-                        </div>
-
-                        <!-- Skill Set 4 -->
-                        <div class="skill-set" id="skill-set-1" style="transform: translateX(100%);">
-                            <div class="skill">
-                                <div class="skill-label">Correlação e Regressão</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Frequências e Medidas</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Probabilidade e Amostragem</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Teste de Hipótese</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 60%;">Intermediário</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Salesforce</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 20%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 40%;">Básico</div>
-                            </div>
-                        </div>
-
-                        <!-- Skill Set 5 -->
-                        <div class="skill-set" id="skill-set-1" style="transform: translateX(100%);">
-                            <div class="skill">
-                                <div class="skill-label">Data Visualization</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 100%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 90%;">Avançado</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">HTML/CSS</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 60%;">Intermediário</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Google Cloud</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 60%;">Intermediário</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">Storytelling</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 60%;">Intermediário</div>
-                            </div>
-                            <div class="skill">
-                                <div class="skill-label">VS Code</div>
-                                <div class="skill-bar">
-                                    <div class="skill-percentage" style="width: 60%;"></div>
-                                </div>
-                                <div class="skill-level" style="left: 60%;">Intermediário</div>
-                            </div>
+                        <div class="info-item">
+                            <strong>Email:</strong> joaodtemporin@gmail.com
                         </div>
                     </div>
-
-                    <!-- Botões para trocar de conjunto de skills -->
-                    <div class="skills-buttons">
-                        <button class="skill-set-btn active" data-set="0">1</button>
-                        <button class="skill-set-btn" data-set="1">2</button>
-                        <button class="skill-set-btn" data-set="2">3</button>
-                        <button class="skill-set-btn" data-set="3">4</button>
-                        <button class="skill-set-btn" data-set="4">5</button>
+                    <div class="about-buttons">
+                        <a href="https://drive.google.com/file/d/1Nvn8186fzGLGbax6L-JrqMmvkNAkORoZ/view?usp=sharing" target="_blank" class="btn btn-primary">Ver CV</a>
+                        <a href="http://lattes.cnpq.br/7149441506458457" target="_blank" class="btn btn-outline">Ver Lattes</a>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
-        <a href="https://drive.google.com/file/d/1Nvn8186fzGLGbax6L-JrqMmvkNAkORoZ/view?usp=sharing" target="_blank" download style="text-decoration: none;">
-            <button class="baixar-cv">ACESSE MEU CURRICULUM VITAE</button>
-        </a>
-
-        <a href="http://lattes.cnpq.br/7149441506458457" target="_blank" download style="text-decoration: none;">
-            <button class="baixar-cv">ACESSE MEU CURRICULUM LATTES</button>
-        </a>
-
     </section>
 
-    <!-- Seção de Experiência -->
-    <section id="experiencia" class="section">
-        <h2>Experiência</h2>
-        <div class="experience-container">
+    <section class="section" id="experiencia">
+        <div class="container">
+            <h2 class="section-title">Experiência</h2>
             <div class="timeline">
-                <!-- Experiência 1 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="date">Mai 2025 - Presente</span>
-                        <h3>Analista de Business Intelligence Pleno</h3>
-                        <div class="company">Maxinutri</div>
+                        <span class="timeline-badge">Atual</span>
+                        <span class="timeline-date">Set 2025 - Presente</span>
+                        <h3>Cofundador</h3>
+                        <h4>Wize Analytics</h4>
                         <ul>
-                            <li>Desenvolvimento e manutenção de relatórios e painéis no Power BI</li>
-                            <li>Criação e gestão de fluxos de automação para extração, transformação e carga de dados (ETL) e publicação de relatórios</li>
-                            <li>Projeção e implementação de transformações, limpeza e agregação de dados no Power BI, utilizando Power Query, Linguagem M e DAX</li>
-                            <li>Otimização do desempenho de dashboards, ajustando consultas e modelos de dados para recuperação e visualização de dados eficientes</li>
-                            <li>Comunicação contínua com stakeholders para entendimento de necessidades e regras de negócios</li>
-                            <li>Garantia da integridade, qualidade e atualização dos dados utilizados para análises</li>
-                            <li>Análise e propostas de melhorias nos processos operacionais</li>
+                            <li>Execução de diagnósticos completos de arquitetura e maturidade de dados para definição de roadmaps técnicos.</li>
+                            <li>Desenvolvimento e manutenção de dashboards, relatórios e painéis interativos</li>
+                            <li>Desenvolvimento, otimização e monitoramento de pipelines ETL/ELT integrando bancos SQL, APIs, Dataflows e sistemas internos</li>
+                            <li>Implementação de modelos preditivos (regressão, classificação, clustering, séries temporais) com avaliação e re-treinamento contínuo</li>
+                            <li>Automação e orquestração de workflows utilizando Airflow, Docker e integrações programáticas</li>
+                            <li>Desenvolvimento de automações operacionais para eliminação de processos manuais e aumento de eficiência</li>
+                            <li>Estruturação de governança de dados, incluindo catálogo, linhagem, políticas de acesso e classificação sensível em conformidade com LGPD</li>
                         </ul>
+                        <div class="tags">
+                            <span>Gestão de Projetos</span>
+                            <span>Business Intelligence</span>
+                            <span>Ciência de Dados/IA</span>
+                            <span>Governança de Dados</span>
+                            <span>Automações Inteligente</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Experiência 2 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="date">Ago 2024 - Mai 2025</span>
-                        <h3>Analista de Business Intelligene Júnior</h3>
-                        <div class="company">Dechra Pharmaceuticals</div>
-                        <p>Responsável pelo desenvolvimento de dashboards no Power BI e análises mercadológicas para apoiar decisões estratégicas.</p>
+                        <span class="timeline-badge">Atual</span>
+                        <span class="timeline-date">Mai 2025 - Presente</span>
+                        <h3>Analista de BI Pleno</h3>
+                        <h4>Maxinutri Nutracêuticos</h4>
                         <ul>
-                            <li>SQL para extração e transformação de dados</li>
-                            <li>Python para processos de ETL, Web Scraping, Estatística e Data Science</li>
-                            <li>Treinamentos de integração sobre Power BI e análise de dados</li>
-                            <li>Monitoramento do uso de Salesforce</li>
+                            <li>Desenvolvimento e manutenção de relatórios e painéis estratégicos no Power BI</li>
+                            <li>Criação e manutenção de automações de processos</li>
+                            <li>Orquestração de workflows utilizando Apache Airflow e Docker</li>
+                            <li>Desenvolvimento, manutenção e otimização de pipelines de dados</li>
+                            <li>Construção de aplicativos web interativos com Streamlit e HTML/CSS</li>
+                            <li>Atuação direta com stakeholders para levantamento de requisitos, entendimento de necessidades e alinhamento das entregas às metas estratégicas do negócio</li>
+                            <li>Identificação de oportunidades e implementação de melhorias contínuas em processos operacionais, analíticos e de governança de dados</li>
                         </ul>
+                        <div class="tags">
+                            <span>Power BI</span>
+                            <span>Python</span>
+                            <span>Airflow</span>
+                            <span>Docker</span>
+                            <span>Streamlit</span>
+                            <span>HTML/CSS</span>
+                            <span>SQL</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Experiência 3 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="date">Ago 2023 - Jul 2024</span>
-                        <h3>Estagiário de Inteligência de Mercado</h3>
-                        <div class="company">Dechra Pharmaceuticals</div>
-                        <p>Auxilio no desenvolvimento de análises mercadológicas e dashboards no Power BI</p>
+                        <span class="timeline-date">Ago 2024 - Mai 2025</span>
+                        <h3>Analista de BI Júnior</h3>
+                        <h4>Dechra Pharmaceuticals</h4>
                         <ul>
-                            <li>Gestão de contratos comerciais</li>
-                            <li>Automação de processos com Python</li>
-                            <li>Coleta de dados utilizando Web Scraping</li>
-                            <li>Apoio no desenvolvimento de relatórios de mercado</li>
+                            <li>Desenvolvimento e manutenção de dashboards no Power BI</li>
+                            <li>Extração, modelagem e transformação de dados em SQL</li>
+                            <li>Orquestração e manutenção de pipelines de dados</li>
+                            <li>Criação e otimização de automações de processos manuais utilizando Python</li>
+                            <li>Realização de análises estatísticas e mercadológicas para suporte à inteligência competitiva</li>
+                            <li>Apoio à tomada de decisão por meio da integração de indicadores de Sell In, Sell Out, dados de mercado (IQVIA) e KPIs comerciais.</li>
+                            <li>Desenvolvimento de scripts de web scraping para coleta de dados externos relevantes ao planejamento estratégico</li>
+                            <li>Condução de treinamentos de integração para fortalecer a maturidade analítica dos times internos</li>
                         </ul>
+                        <div class="tags">
+                            <span>Power BI</span>
+                            <span>Python</span>
+                            <span>SQL</span>
+                            <span>Estatística</span>
+                            <span>Treinamentos</span>
+                        </div>
+                        <br>                
+                        <span class="timeline-date">Ago 2023 - Jul 2024</span>
+                        <h3>Estagiário de BI e Marketing</h3>
+                        <h4>Dechra Pharmaceuticals</h4>
+                        <li>Desenvolvimento e manutenção de dashboards no Power BI</li>
+                        <li>Extração, modelagem e transformação de dados em SQL</li>
+                        <li>Apoio em análises estatísticas e mercadológicas</li>
+                        <div class="tags">
+                            <span>Power BI</span>
+                            <span>SQL</span>
+                            <span>Excel</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Experiência 4 -->
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="date">Fev 2023 - Ago 2023</span>
+                        <span class="timeline-date">Fev 2023 - Ago 2023</span>
                         <h3>Estagiário de TI</h3>
-                        <div class="company">Hospital Evangélico de Londrina</div>
-                        <p>Apoio na triagem de chamados e na gestão financeira do setor de TI</p>
+                        <h4>Hospital Evangélico de Londrina</h4>
                         <ul>
-                            <li>Desenvolvimento de dashboard para gestão e análise financeira</li>
-                            <li>Responsável pelo cadastro e alteração de dados de usuários no TOTVS RM</li>
+                            <li>Triagem e acompanhamento de chamados internos, garantindo maior agilidade na resolução de demandas e melhoria do fluxo operacional</li>
+                            <li>Apoio à gestão financeira do setor, com controle de despesas e organização de informações para tomada de decisão</li>
+                            <li>Responsável por cadastros, atualizações e manutenção de perfis de usuários em sistemas internos</li>
+                            <li>Desenvolvimento de dashboards internos, otimizando o acompanhamento de custos e a análise gerencial da área de TI</li>
                         </ul>
+                        <div class="tags">
+                            <span>Excel</span>
+                            <span>TOTVS RM</span>
+                        </div>
                     </div>
                 </div>
-            </div class="timeline">
+            </div>
+        </div>
     </section>
 
-
-    <!-- Seção Formação -->
-    <section id="formacao" class="section">
+    <section class="section section-alt" id="formacao">
         <div class="container">
             <h2 class="section-title">Formação</h2>
-            <div class="formacao-content">
-                <div class="formacao-item">
-                    <!-- Logo da PUCPR -->
-                    <img src="https://sites.pucpr.br/enade/wp-content/uploads/sites/20/2021/06/logo-pucpr.png" alt="Logo PUCPR" style="width: 120px; margin-bottom: 10px;">
-
-                    <h3>Administração de Empresas</h3>
-                    <p>Pontifícia Universidade Católica do Paraná (PUCPR)</p>
-                    <span class="formacao-data">2022 - 2025</span>
-                    <p></p>
-                    <li>Bolsa integral - Programa Universidade Para Todos (PROUNI).</strong></li>
-                    <li>Participação premiada no Desafio PUCPR Empresas 2022 (parceria com TCS).</li>
-                    <li>Disciplinas-chave: Estatística, Análise Financeira, Microeconomia, Matemática Aplicada a Negócios.</li>
+            <div class="education-card">
+                <div class="education-content">
+                    <h3>Bacharelado em Administração de Empresas</h3>
+                    <h4>Pontifícia Universidade Católica do Paraná - PUCPR</h4>
+                    <span class="education-date">Mar/2022 - Dez/2025</span>
+                    <ul>
+                        <li>Bolsa integral - Programa Universidade Para Todos (PROUNI)</li>
+                        <li>Premiado no Desafio PUCPR x Tata Consultancy Services Empresas 2022</li>
+                        <li><strong>Disciplinas-chave:</strong> Estatística; Microeconomia; Macroeconomia; Cálculo Aplicado a Negócios; Business Intelligence; Gestão de Projetos; Gestão de Pessoas; Análise Financeira;</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
-    <!-- Seção de Cursos -->
-
-    <section id="cursos" class="section" "">
-        <h2>Cursos</h2>
-        <div class="cursos-container">
-            <div class="cursos-wrapper">
-                <!-- Curso Set 1 -->
-                <div class="curso-set" id="curso-set-0">
-                    <div class="curso-card">
-                        <div class="curso-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                <rect x="4" y="4" width="4" height="4" />
-                                <rect x="10" y="4" width="4" height="4" />
-                                <rect x="16" y="4" width="4" height="4" />
-                                <rect x="4" y="10" width="4" height="4" />
-                                <rect x="10" y="10" width="4" height="4" />
-                                <rect x="16" y="10" width="4" height="4" />
-                            </svg>
-
-                        </div>
-                        <div class="curso-content">
-                            <h3>Trilha de Dados</h3>
-                            <p class="curso-instituicao">Grupo Boticário</p>
-                            <p class="curso-data">01/2024 - 09/2024</p>
-                            <p class="curso-descricao">Excel, Git & Github, Power BI, Modelagem de Banco de Dados, Pandas, NumPy, Matplotlib, Seaborn, Data Science, Estatística, PostgreSQL, DataViz, Storytelling, Looker Studio, Big Query e Google Cloud.</p>
-                        </div>
-                    </div>
-
-                    <div class="curso-card">
-                        <div class="curso-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                <!-- Círculo central representando um "núcleo" de IA -->
-                                <circle cx="12" cy="12" r="3" stroke="#005b96" stroke-width="2" fill="none" />
-
-                                <!-- Linhas conectando o "núcleo", representando redes de IA -->
-                                <line x1="12" y1="3" x2="12" y2="6" stroke="#005b96" stroke-width="1" />
-                                <line x1="12" y1="18" x2="12" y2="21" stroke="#005b96" stroke-width="1" />
-                                <line x1="3" y1="12" x2="6" y2="12" stroke="#005b96" stroke-width="1" />
-                                <line x1="18" y1="12" x2="21" y2="12" stroke="#005b96" stroke-width="1" />
-
-                                <!-- Linhas diagonais representando conexões de IA -->
-                                <line x1="5" y1="5" x2="9" y2="9" stroke="#005b96" stroke-width="1" />
-                                <line x1="19" y1="5" x2="15" y2="9" stroke="#005b96" stroke-width="1" />
-                                <line x1="5" y1="19" x2="9" y2="15" stroke="#005b96" stroke-width="1" />
-                                <line x1="19" y1="19" x2="15" y2="15" stroke="#005b96" stroke-width="1" />
-                            </svg>
-
-
-                        </div>
-                        <div class="curso-content">
-                            <h3>Power BI na Era da IA Generativa</h3>
-                            <p class="curso-instituicao">Gerson Viergutz / Minhas Planilhas</p>
-                            <p class="curso-data">Concluído em 08/2024</p>
-                            <p class="curso-descricao">Análise de Dados e Estatística com IA Generativa, Construção de Prompts, IA e Power Query, Soluções em DAX com IA, Data Visualization e IA</p>
-                        </div>
-                    </div>
-
-                    <div class="curso-card">
-                        <div class="curso-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-                                <rect x="5" y="10" width="2" height="8" />
-                                <rect x="9" y="6" width="2" height="12" />
-                                <rect x="13" y="2" width="2" height="16" />
-                            </svg>
-
-                        </div>
-                        <div class="curso-content">
-                            <h3>Power BI para Business Intelligence e Data Science</h3>
-                            <p class="curso-instituicao">Data Science Academy</p>
-                            <p class="curso-data">07/2023 - 08/2023</p>
-                            <p class="curso-descricao">Modelagem, Relacionamentos, DAX, Limpeza e Manipulação de Dados, Linguagem M, Power Query, Machine Learning e Power BI, Fundamentos de Estatística, Data Visualization.</p>
-                        </div>
-                    </div>
+    <section class="section" id="cursos">
+        <div class="container">
+            <h2 class="section-title">Cursos</h2>
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Página 1 -->
+                <div class="course-card" data-page="1">
+                    <h3>Programa Desenvolve - Trilha de Dados</h3>
+                    <h4>Grupo Boticário</h4>
+                    <p class="course-date">01/2024 - 09/2024</p>
+                    <p>Excel, Git & Github, Power BI, Modelagem de Banco de Dados, Pandas, NumPy, Matplotlib, Seaborn, Data Science, Estatística, PostgreSQL, DataViz, Storytelling, Looker Studio, Big Query e Google Cloud.</p>
                 </div>
 
-                <!-- Curso Set 2 -->
-                <div class="curso-set" id="curso-set-1" style="display: none;">
-                    <div class="curso-card">
-                        <div class="curso-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <!-- Megafone -->
-                                <path d="M8 2V6L4 8V16L8 18V22L16 18V6L8 2Z" stroke="#005b96" stroke-width="2" fill="none" />
-                            </svg>
-                        </div>
-                        <div class="curso-content">
-                            <h3>Análise de Dados e Métricas de Marketing e Vendas</h3>
-                            <p class="curso-instituicao">RD University</p>
-                            <p class="curso-data">Concluído em 08/2023</p>
-                            <p class="curso-descricao">Métricas de Negócio, Data Storytelling, UTMs, Análise de Dados de Marketing Digital, Copywriting, Relatórios de Desempenho de Vendas, Métricas de Campanhas, Análise de ROI e Resultados.</p>
-                        </div>
-                    </div>
-
-                    <div class="curso-card">
-                        <div class="curso-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <!-- Cilindro representando o banco de dados -->
-                                <ellipse cx="12" cy="6" rx="8" ry="4" stroke="#005b96" stroke-width="2" fill="none" />
-                                <rect x="4" y="6" width="16" height="12" rx="8" stroke="#005b96" stroke-width="2" fill="none" />
-                                <ellipse cx="12" cy="18" rx="8" ry="4" stroke="#005b96" stroke-width="2" fill="none" />
-                            </svg>
-                        </div>
-                        <div class="curso-content">
-                            <h3>SQL: a Linguagem dos Bancos de Dados</h3>
-                            <p class="curso-instituicao">Escola Conquer</p>
-                            <p class="curso-data">Concluído em 08/2023</p>
-                            <p class="curso-descricao">Filtro, Operações, Subquery, JOINs, Agrupamento, Windows Funtions, Conversão, CRUD.</p>
-                        </div>
-                    </div>
-
-                    <div class="curso-card">
-                        <div class="curso-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <!-- Estrutura da planilha -->
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke="#005b96" fill="none" />
-
-                                <!-- Linhas horizontais -->
-                                <line x1="3" y1="9" x2="21" y2="9" />
-                                <line x1="3" y1="15" x2="21" y2="15" />
-
-                                <!-- Linhas verticais -->
-                                <line x1="9" y1="3" x2="9" y2="21" />
-                                <line x1="15" y1="3" x2="15" y2="21" />
-
-                                <!-- Letra "X" estilizada no canto inferior esquerdo -->
-                                <text x="6" y="20.5" font-size="6" fill="#005b96" font-weight="bold">X</text>
-                            </svg>
-
-                        </div>
-                        <div class="curso-content">
-                            <h3>Excel: do Básico ao Intermediário</h3>
-                            <p class="curso-instituicao">Pontifícia Universidade Católica do Paraná - PUCPR</p>
-                            <p class="curso-data">Concluído em 06/2023</p>
-                            <p class="curso-descricao">Fórmulas, Funções, Power Pivot, Tabelas Dinâmicas, Gráficos Dinâmicos, Dashboards.</p>
-                        </div>
-                    </div>
+                <div class="course-card" data-page="1">
+                    <h3>Power BI na Era da IA Generativa</h3>
+                    <h4>Gerson Viergutz / Minhas Planilhas</h4>
+                    <p class="course-date">08/2024</p>
+                    <p>Análise de Dados e Estatística com IA Generativa, Construção de Prompts, IA e Power Query, Soluções em DAX com IA, Data Visualization e IA</p>
                 </div>
 
+                <div class="course-card" data-page="1">
+                    <h3>Power BI para Business Intelligence e Data Science</h3>
+                    <h4>Data Science Academy</h4>
+                    <p class="course-date">07/2023 - 08/2023</p>
+                    <p>Modelagem, Relacionamentos, DAX, Limpeza e Manipulação de Dados, Linguagem M, Power Query, Machine Learning e Power BI, Fundamentos de Estatística, Data Visualization.</p>
+                </div>
 
+                <!-- Página 2 -->
+                <div class="course-card" data-page="2">
+                    <h3>Análise de Dados e Métricas de Marketing e Vendas</h3>
+                    <h4>RD University</h4>
+                    <p class="course-date">08/2023</p>
+                    <p>Métricas de Negócio, Data Storytelling, UTMs, Análise de Dados de Marketing Digital, Copywriting, Relatórios de Desempenho de Vendas, Métricas de Campanhas, Análise de ROI e Resultados.</p>
+                </div>
 
-                <!-- Botões para navegação entre cursos -->
-                <div class="cursos-buttons">
-                    <button class="curso-set-btn active" data-set="0">1</button>
-                    <button class="curso-set-btn" data-set="1">2</button>
+                <div class="course-card" data-page="2">
+                    <h3>SQL: a Linguagem dos Bancos de Dados</h3>
+                    <h4>Escola Conquer</h4>
+                    <p class="course-date">08/2023</p>
+                    <p>Filtro, Operações, Subquery, JOINs, Agrupamento, Windows Funtions, Conversão, CRUD</p>                    
+                </div>
+
+                <div class="course-card" data-page="2">
+                    <h3>Excel: do Básico ao Avançado</h3>
+                    <h4>Pontifícia Universidade Católica do Paraná - PUCPR</h4>
+                    <p class="course-date">06/2023</p>
+                    <p>Fórmulas, Funções, Power Pivot, Tabelas Dinâmicas, Gráficos Dinâmicos, Dashboards.</p>
                 </div>
             </div>
+            
+            <div class="pagination" id="coursesPagination">
+                <button class="pagination-btn active" data-page="1">1</button>
+                <button class="pagination-btn" data-page="2">2</button>
+            </div>
+        </div>
     </section>
 
-    </section>
-
-    <!-- Botão de Voltar ao Topo -->
-    <button id="back-to-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">
-        <!-- Seta branca para cima -->
-        <svg xmlns="https://i.ibb.co/7tCqF7p0/Sem-t-tulo.png" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 19V5M5 12l7-7 7 7" />
-        </svg>
-    </button>
-
-
-    <!-- Projetos -->
-    <section id="projetos" class="section" "">
+    <section class="section section-alt" id="projetos">
         <div class="container">
             <h2 class="section-title">Projetos</h2>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Página 1 -->
+                <a href="https://lookerstudio.google.com/reporting/a0de173b-db72-4cd2-9308-317c810e349c" target="_blank" class="project-card" data-page="1">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/projeto-efetivo-rebanho.png" alt="Efetivo de rebanhos">
+                    <div class="project-info">
+                        <h3>Efetivo de Rebanhos</h3>
+                        <p>Looker Studio · Data Viz</p>
+                    </div>
+                </a>
 
-            <!-- Container dos projetos -->
-            <div id="portfolio-container" class="portfolio">
-                <div class="portfolio-item">
-                    <a href="https://lookerstudio.google.com/reporting/a0de173b-db72-4cd2-9308-317c810e349c" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/projeto-efetivo-rebanho.png" alt="Efetivo de rebanhos" class="portfolio-image">
-                        <div class="portfolio-caption">Efetivo de rebanhos por tipo de rebanho</div>
-                    </a>
-                </div>
+                <a href="https://github.com/tempxrin/estudo-temperatura/tree/main" target="_blank" class="project-card" data-page="1">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/projeto-estudo-temperatura.jpeg" alt="Estudo de Temperatura">
+                    <div class="project-info">
+                        <h3>Estudo de Temperatura</h3>
+                        <p>Python · Pandas · Estatística</p>
+                    </div>
+                </a>
 
-                <div class="portfolio-item">
-                    <a href="https://github.com/tempxrin/estudo-temperatura/tree/main" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/projeto-estudo-temperatura.jpeg" alt="Estudo de Temperatura" class="portfolio-image">
-                        <div class="portfolio-caption">Estudo de Temperatura</div>
-                    </a>
-                </div>
+                <a href="https://github.com/tempxrin/analise-dados-preditiva/tree/main" target="_blank" class="project-card" data-page="1">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/projeto-analise-dados.png" alt="Análise Preditiva">
+                    <div class="project-info">
+                        <h3>Análise Preditiva</h3>
+                        <p>Python · ML · Pandas</p>
+                    </div>
+                </a>
 
-                <div class="portfolio-item">
-                    <a href="https://github.com/tempxrin/analise-dados-preditiva/tree/main" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/projeto-analise-dados.png" alt="Análise de Dados e Predição com Python e Pandas" class="portfolio-image">
-                        <div class="portfolio-caption">Análise de Dados e Predição com Python e Pandas</div>
-                    </a>
-                </div>
+                <!-- Página 2 -->
+                <a href="https://github.com/tempxrin/gini-por-municipio" target="_blank" class="project-card" data-page="2">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/grafico-mapa-gini.png" alt="Índice de Gini">
+                    <div class="project-info">
+                        <h3>Mapa do Índice de Gini</h3>
+                        <p>Python · Geolocalização</p>
+                    </div>
+                </a>
 
-                <div class="portfolio-item">
-                    <a href="https://drive.google.com/drive/folders/1u4gbVhoBGpOTJ7NWfxxwrnwLoItKdzSV?dmr=1&ec=wgc-drive-hero-goto" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/projeto-modelagem-bd.png" alt="Projeto Adicional" class="portfolio-image">
-                        <div class="portfolio-caption">Modelagem de Banco de Dados</div>
-                    </a>
-                </div>
+                <a href="https://github.com/tempxrin/seu-salario-realidade-brasileira" target="_blank" class="project-card" data-page="2">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/seu-salario-realidade-brasileira.png" alt="Análise Salarial">
+                    <div class="project-info">
+                        <h3>Comparativo Salarial</h3>
+                        <p>Python · Streamlit</p>
+                    </div>
+                </a>
 
-                <div class="portfolio-item">
-                    <a href="https://github.com/tempxrin/gini-por-municipio" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/grafico-mapa-gini.png" alt="Projeto Adicional" class="portfolio-image">
-                        <div class="portfolio-caption">Mapa do Índice de Gini por Município Brasileiro</div>
-                    </a>
-                </div>
-                
-                <div class="portfolio-item">
-                    <a href="https://github.com/tempxrin/seu-salario-realidade-brasileira" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/seu-salario-realidade-brasileira.png" alt="Projeto Adicional" class="portfolio-image">
-                        <div class="portfolio-caption">Compare sua Renda diante da Realidade Brasileira</div>
-                    </a>
-                </div>
+                <a href="https://drive.google.com/drive/folders/1u4gbVhoBGpOTJ7NWfxxwrnwLoItKdzSV" target="_blank" class="project-card" data-page="2">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/projeto-modelagem-bd.png" alt="Modelagem BD">
+                    <div class="project-info">
+                        <h3>Modelagem de BD</h3>
+                        <p>SQL · PostgreSQL · brModelo</p>
+                    </div>
+                </a>
             </div>
-
-            <!-- Botões de Paginação -->
-            <div id="pagination" class="pagination-buttons"></div>
+            
+            <div class="pagination">
+                <button class="pagination-btn active" data-page="1">1</button>
+                <button class="pagination-btn" data-page="2">2</button>
+            </div>
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section id="newsletter" class="section">
+    <section class="section" id="newsletter">
         <div class="container">
             <h2 class="section-title">Newsletter</h2>
-            <div class="portfolio">
-                <div class="portfolio-item">
-                    <a href="https://www.linkedin.com/pulse/por-que-todo-profissional-deve-entender-de-dados-jo%C3%A3o-daniel-temporin-yjswf/?trackingId=xe%2By8zI0RJ6MK7z2XWzUyw%3D%3D" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/newsletter-profissional-dados.jpeg" alt="Por que todo profissional deve entender de dados?" class="portfolio-image">
-                        <div class="portfolio-caption">Por que todo profissional deve entender de dados?</div>
-                    </a>
-                </div>
+            <div class="projects-grid">
+                <a href="https://www.linkedin.com/pulse/por-que-todo-profissional-deve-entender-de-dados-jo%C3%A3o-daniel-temporin-yjswf/?trackingId=xe%2By8zI0RJ6MK7z2XWzUyw%3D%3D" target="_blank" class="project-card active">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/newsletter-profissional-dados.jpeg" alt="Por que todo profissional deve entender de dados?">
+                    <div class="project-info">
+                        <h3>Por que todo profissional deve entender de dados?</h3>
+                        <p>LinkedIn · Artigo</p>
+                    </div>
+                </a>
 
-                <div class="portfolio-item">
-                    <a href="https://www.linkedin.com/pulse/aplicando-estat%25C3%25ADstica-b%25C3%25A1sica-com-python-excel-jo%25C3%25A3o-daniel-temporin-ksqqf/?trackingId=xgIozuvFRe6WpUi80hfvsw%3D%3D" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/newsletter-analise-estatistica.png" alt="Aplicando Estatística Básica com Python no Excel" class="portfolio-image">
-                        <div class="portfolio-caption">Aplicando Estatística Básica com Python no Excel</div>
-                    </a>
-                </div>
+                <a href="https://www.linkedin.com/pulse/aplicando-estat%25C3%25ADstica-b%25C3%25A1sica-com-python-excel-jo%25C3%25A3o-daniel-temporin-ksqqf/?trackingId=xgIozuvFRe6WpUi80hfvsw%3D%3D" target="_blank" class="project-card active">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/newsletter-analise-estatistica.png" alt="Aplicando Estatística Básica com Python no Excel">
+                    <div class="project-info">
+                        <h3>Aplicando Estatística Básica com Python no Excel</h3>
+                        <p>LinkedIn · Artigo</p>
+                    </div>
+                </a>
 
-                <div class="portfolio-item">
-                    <a href="https://joaotemporin.substack.com/p/o-futuro-do-mercado-com-a-ia?r=3wxg7d&triedRedirect=true" target="_blank">
-                        <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/newsletter-mercado-IA.webp" alt="O futuro do mercado com a IA" class="portfolio-image">
-                        <div class="portfolio-caption">O futuro do mercado com a IA</div>
-                    </a>
-                </div>
+                <a href="https://joaotemporin.substack.com/p/o-futuro-do-mercado-com-a-ia?r=3wxg7d&triedRedirect=true" target="_blank" class="project-card active">
+                    <img src="https://raw.githubusercontent.com/tempxrin/joaodtemporin.github.io/main/images/newsletter-mercado-IA.webp" alt="O futuro do mercado com a IA">
+                    <div class="project-info">
+                        <h3>O futuro do mercado com a IA</h3>
+                        <br>
+                        <p>Substack · Artigo</p>
+                    </div>
+                </a>
+            </div>
+        </div>
     </section>
-    <!-- Seção Contato com Botões -->
-    <section id="contato" class="section">
+
+    <section class="section section-alt" id="contato">
         <div class="container">
             <h2 class="section-title">Contato</h2>
-            <div class="contato-content">
-                <div class="contato-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    <div class="contato-info">
-                        <strong>Email:</strong>
-                        <span>joaodtemporin@gmail.com</span>
-                    </div>
-                    <a href="mailto:joaodtemporin@gmail.com" class="contato-btn">
-                        Enviar Email
-                    </a>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <h3>Email</h3>
+                    <p>joaodtemporin@gmail.com</p>
+                    <a href="mailto:joaodtemporin@gmail.com" class="btn btn-sm btn-primary">Enviar Email</a>
                 </div>
 
-                <div class="contato-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                    <div class="contato-info">
-                        <strong>WhatsApp:</strong>
-                        <span>(43) 93618-0456</span>
-                    </div>
-                    <a href="https://wa.me/5543936180456" target="_blank" class="contato-btn whatsapp-btn">
-                        Abrir WhatsApp
-                    </a>
+                <div class="contact-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                    <h3>WhatsApp</h3>
+                    <p>(43) 93618-0456</p>
+                    <a href="https://wa.me/5543936180456" target="_blank" class="btn btn-sm btn-primary">Abrir WhatsApp</a>
                 </div>
 
-                <div class="contato-item">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#005b96" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                    <div class="contato-info">
-                        <strong>LinkedIn:</strong>
-                        <span>joao-temporin</span>
-                    </div>
-                    <a href="https://www.linkedin.com/in/joao-temporin/" target="_blank" class="contato-btn linkedin-btn">
-                        Ver Perfil
-                    </a>
+                <div class="contact-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    <h3>LinkedIn</h3>
+                    <p>joao-temporin</p>
+                    <a href="https://www.linkedin.com/in/joao-temporin/" target="_blank" class="btn btn-sm btn-primary">Ver Perfil</a>
+                </div>
+
+                <div class="contact-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+                    <h3>GitHub</h3>
+                    <p>tempxrin</p>
+                    <a href="https://github.com/tempxrin" target="_blank" class="btn btn-sm btn-primary">Ver Repositórios</a>
                 </div>
             </div>
+        </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>Desenvolvido por <strong>João Daniel Temporin</strong> &copy; 2025</p>
+            <p>&copy; 2025 João Daniel Temporin. Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <button class="scroll-top" id="scrollTop">↑</button>
 
-    <script>
-        // Skill sets para Hard Skills
-        const skillSets = [
-            [{
-                    name: "Microsoft Excel",
-                    percent: 90,
-                    level: "Avançado"
-                },
-                {
-                    name: "Python",
-                    percent: 85,
-                    level: "Avançado"
-                },
-                {
-                    name: "Power BI",
-                    percent: 80,
-                    level: "Avançado"
-                },
-                {
-                    name: "Salesforce",
-                    percent: 60,
-                    level: "Básico"
-                },
-                {
-                    name: "SQL",
-                    percent: 90,
-                    level: "Avançado"
-                }
-            ],
-            [{
-                    name: "RPA",
-                    percent: 70,
-                    level: "Intermediário"
-                },
-                {
-                    name: "Web Scraping",
-                    percent: 75,
-                    level: "Intermediário"
-                },
-                {
-                    name: "Big Data",
-                    percent: 80,
-                    level: "Avançado"
-                },
-                {
-                    name: "Cloud",
-                    percent: 85,
-                    level: "Avançado"
-                },
-                {
-                    name: "Business Analytics",
-                    percent: 80,
-                    level: "Avançado"
-                }
-            ],
-            [{
-                    name: "ETL",
-                    percent: 80,
-                    level: "Avançado"
-                },
-                {
-                    name: "Banco de Dados",
-                    percent: 90,
-                    level: "Avançado"
-                },
-                {
-                    name: "Data Visualization",
-                    percent: 85,
-                    level: "Avançado"
-                },
-                {
-                    name: "Machine Learning",
-                    percent: 80,
-                    level: "Avançado"
-                },
-                {
-                    name: "Data Science",
-                    percent: 85,
-                    level: "Avançado"
-                }
-            ]
-        ];
-
-        const skillSetButtons = document.querySelectorAll(".skill-set-btn");
-        const skillSetsElements = document.querySelectorAll(".skill-set");
-
-        let activeSet = 0;
-
-        // Animação das barras de progresso ao carregar
-        window.addEventListener('DOMContentLoaded', function() {
-            const skillPercentages = document.querySelectorAll('.skill-percentage');
-            skillPercentages.forEach(function(bar) {
-                const targetWidth = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(function() {
-                    bar.style.width = targetWidth;
-                }, 300);
-            });
-        });
-
-        // Atualiza os Skill Sets ao clicar
-        function updateSkillSet(setIndex) {
-            skillSetButtons.forEach(btn => btn.classList.remove("active"));
-            document.querySelector(`.skill-set-btn[data-set='${setIndex}']`).classList.add("active");
-
-            if (setIndex > activeSet) {
-                skillSetsElements[activeSet].style.transform = "translateX(-100%)";
-                skillSetsElements[setIndex].style.transform = "translateX(0)";
-            } else if (setIndex < activeSet) {
-                skillSetsElements[activeSet].style.transform = "translateX(100%)";
-                skillSetsElements[setIndex].style.transform = "translateX(0)";
-            }
-
-            activeSet = setIndex;
-
-            const skillPercentages = skillSetsElements[setIndex].querySelectorAll('.skill-percentage');
-            skillPercentages.forEach(function(bar) {
-                const targetWidth = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(function() {
-                    bar.style.width = targetWidth;
-                }, 300);
-            });
-        }
-
-        // Animação dos itens da timeline ao scrollar
-        window.addEventListener('scroll', function() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            timelineItems.forEach(function(item) {
-                const itemPosition = item.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                if (itemPosition < screenPosition) {
-                    item.style.opacity = 1;
-                }
-            });
-        });
-
-        // Inicia timeline com opacidade zero
-        document.addEventListener('DOMContentLoaded', function() {
-            const timelineItems = document.querySelectorAll('.timeline-item');
-            timelineItems.forEach(function(item) {
-                item.style.opacity = 0;
-            });
-        });
-
-        // Inicializa skill sets
-        skillSetsElements.forEach((set, index) => {
-            set.style.transform = index === 0 ? "translateX(0)" : "translateX(100%)";
-        });
-
-        // Mudança de fundo do menu e cor da fonte conforme rola para as seções
-        window.addEventListener('scroll', function() {
-            var menu = document.getElementById('sticky-menu');
-            var sobreMim = document.getElementById('sobre'); // Ajuste para o id da sua seção
-
-            // Se o usuário passar da seção "Sobre Mim", muda o fundo para branco
-            if (window.scrollY > sobreMim.offsetTop) {
-                menu.classList.add('white-background'); // Fundo branco quando rolar
-            } else {
-                menu.classList.remove('white-background'); // Fundo transparente na página inicial
-            }
-
-            // Altera a cor do texto para branco na página inicial e volta ao normal depois de rolar
-            if (window.scrollY === 0) {
-                menu.classList.add('white-font'); // Texto branco na página inicial
-            } else {
-                menu.classList.remove('white-font'); // Volta para a cor normal
-            }
-        });
-
-        // Eventos dos botões de skill sets
-        skillSetButtons.forEach(button => {
-            button.addEventListener("click", () => {
-                updateSkillSet(parseInt(button.getAttribute("data-set")));
-            });
-        });
-
-        // Controle do menu sticky com rolagem
-        window.addEventListener('scroll', function() {
-            const heroSection = document.querySelector('.hero-section');
-            const stickyMenu = document.getElementById('sticky-menu');
-            if (heroSection && stickyMenu) {
-                const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-                if (window.pageYOffset > heroBottom - 100) {
-                    stickyMenu.classList.add('visible');
-                } else {
-                    stickyMenu.classList.remove('visible');
-                    stickyMenu.classList.remove('menu-open');
-                }
-            }
-        });
-
-        // Cursos - Tabs e animação
-        document.addEventListener('DOMContentLoaded', function() {
-            const cursoSetButtons = document.querySelectorAll('.curso-set-btn');
-            const cursoSets = document.querySelectorAll('.curso-set');
-
-            function showCursoSet(setIndex) {
-                cursoSets.forEach(set => {
-                    set.style.display = 'none';
-                });
-
-                cursoSets[setIndex].style.display = 'grid';
-
-                cursoSetButtons.forEach(btn => {
-                    btn.classList.remove('active');
-                });
-
-                cursoSetButtons[setIndex].classList.add('active');
-
-                cursoSets[setIndex].style.opacity = '0';
-                setTimeout(() => {
-                    cursoSets[setIndex].style.opacity = '1';
-                }, 50);
-            }
-
-            cursoSetButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    const setIndex = parseInt(this.dataset.set);
-                    showCursoSet(setIndex);
-                });
-            });
-
-            showCursoSet(0);
-
-            const cursoCards = document.querySelectorAll('.curso-card');
-            cursoCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100 * (index + 1));
-            });
-
-            // Ícone abre/fecha menu mobile
-            const menuToggle = document.querySelector('.menu-toggle');
-            const stickyMenu = document.getElementById('sticky-menu');
-            if (menuToggle && stickyMenu) {
-                menuToggle.addEventListener('click', function() {
-                    stickyMenu.classList.toggle('menu-open');
-                });
-            }
-        });
-
-        // === DESTAQUE DO MENU ATIVO ===
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuItems = document.querySelectorAll('.menu a');
-
-            menuItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    menuItems.forEach(i => i.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
-        });
-
-        const sections = document.querySelectorAll("section");
-        const menuLinks = document.querySelectorAll(".menu-items a");
-
-        window.addEventListener("scroll", () => {
-            let current = "";
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 80;
-                if (pageYOffset >= sectionTop) {
-                    current = section.getAttribute("id");
-                }
-            });
-
-            menuLinks.forEach(link => {
-                link.classList.remove("active");
-                if (link.getAttribute("href").includes(current)) {
-                    link.classList.add("active");
-                }
-            });
-        });
-
-        const itemsPerPage = 3; // Itens por página
-        let currentPage = 1; // Página inicial
-
-        const paginationContainer = document.getElementById('pagination'); // Contêiner de navegação
-        const portfolioContainer = document.getElementById('portfolio-container'); // Contêiner dos projetos
-
-        // Adicionar CSS para transição aplicada apenas aos itens específicos da seção Projetos
-        const styleElement = document.createElement('style');
-        styleElement.textContent = `
-  #portfolio-container .portfolio-item {
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-  
-  .fade-out {
-    opacity: 0 !important;
-    transform: translateX(-30px) !important;
-  }
-  
-  .fade-in {
-    opacity: 0 !important;
-    transform: translateX(30px) !important;
-  }
-`;
-        document.head.appendChild(styleElement);
-
-        // Função para exibir os itens da página com transição suave
-        function showPage(targetPage) {
-            if (targetPage === currentPage) return;
-
-            // Seletor específico para os itens da seção de projetos
-            const items = document.querySelectorAll('#portfolio-container .portfolio-item');
-            const direction = targetPage > currentPage ? 'next' : 'prev';
-
-            // 1) Animar a saída dos itens atuais
-            items.forEach((item, index) => {
-                const isCurrentPageItem = index >= (currentPage - 1) * itemsPerPage &&
-                    index < currentPage * itemsPerPage;
-
-                if (isCurrentPageItem) {
-                    item.classList.add('fade-out');
-                }
-            });
-
-            // 2) Após a saída, preparar os novos itens
-            setTimeout(() => {
-                items.forEach((item, index) => {
-                    const isTargetPageItem = index >= (targetPage - 1) * itemsPerPage &&
-                        index < targetPage * itemsPerPage;
-                    const isCurrentPageItem = index >= (currentPage - 1) * itemsPerPage &&
-                        index < currentPage * itemsPerPage;
-
-                    if (isCurrentPageItem) {
-                        item.style.display = 'none';
-                        item.classList.remove('fade-out');
-                    }
-
-                    if (isTargetPageItem) {
-                        item.classList.add('fade-in');
-                        item.style.display = 'block';
-
-                        // Forçar reflow
-                        void item.offsetWidth;
-                    }
-                });
-
-                // 3) Animar a entrada dos novos itens
-                setTimeout(() => {
-                    items.forEach((item, index) => {
-                        const isTargetPageItem = index >= (targetPage - 1) * itemsPerPage &&
-                            index < targetPage * itemsPerPage;
-
-                        if (isTargetPageItem) {
-                            item.classList.remove('fade-in');
-                        }
-                    });
-
-                    // Atualizar o estado da página
-                    currentPage = targetPage;
-                    updateButtonStyles();
-                }, 50);
-            }, 400);
-        }
-
-        // Função para atualizar os estilos dos botões
-        function updateButtonStyles() {
-            const buttons = document.querySelectorAll('.page-btn');
-            buttons.forEach(btn => btn.classList.remove('active-page'));
-            const activeBtn = document.querySelector(`.page-btn[data-page="${currentPage}"]`);
-            if (activeBtn) activeBtn.classList.add('active-page');
-        }
-
-        // Função para exibir a página inicial sem animação
-        function initPage() {
-            const items = document.querySelectorAll('#portfolio-container .portfolio-item');
-            items.forEach((item, index) => {
-                if (index < itemsPerPage) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        // Função para configurar a navegação (botões)
-        function setupPagination() {
-            // Limpar qualquer conteúdo existente de navegação
-            paginationContainer.innerHTML = '';
-
-            // Criar 2 botões de navegação
-            for (let i = 1; i <= 2; i++) {
-                const btn = document.createElement('button');
-                btn.innerText = i;
-                btn.classList.add('custom-button', 'page-btn');
-                btn.setAttribute('data-page', i);
-
-                btn.addEventListener('click', () => {
-                    showPage(i);
-                });
-
-                paginationContainer.appendChild(btn);
-            }
-
-            // Inicializar a primeira página e marcar primeiro botão como ativo
-            initPage();
-            updateButtonStyles();
-        }
-
-        // Chama a função para configurar a navegação
-        setupPagination();
-
-        const reveals = document.querySelectorAll('.reveal');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-
-        reveals.forEach(el => observer.observe(el));
-
-        const cursosItemsPerPage = 3; // Número de cursos por página (ajuste conforme necessário)
-        let currentCursoPage = 1; // Página inicial para cursos
-
-        const cursosBtnsContainer = document.querySelector('.cursos-buttons'); // Contêiner dos botões de paginação de cursos
-
-        // Adicionar CSS para transição específica para a seção de Cursos
-        const cursosStyleElement = document.createElement('style');
-        cursosStyleElement.textContent = `
-  .curso-set {
-    transition: opacity 0.4s ease, transform 0.4s ease;
-  }
-  
-  .curso-fade-out {
-    opacity: 0 !important;
-    transform: translateX(-30px) !important;
-  }
-  
-  .curso-fade-in {
-    opacity: 0 !important;
-    transform: translateX(30px) !important;
-  }
-`;
-        document.head.appendChild(cursosStyleElement);
-
-        // Função para exibir o conjunto de cursos com transição suave
-        function showCursoSet(targetPage) {
-            if (targetPage === currentCursoPage) return;
-
-            // Selecionar todos os conjuntos de cursos
-            const cursoSets = document.querySelectorAll('.curso-set');
-
-            // 1) Animar a saída do conjunto atual
-            const currentSet = cursoSets[currentCursoPage - 1];
-            if (currentSet) {
-                currentSet.classList.add('curso-fade-out');
-            }
-
-            // 2) Após a saída, preparar o novo conjunto
-            setTimeout(() => {
-                // Ocultar o conjunto atual
-                if (currentSet) {
-                    currentSet.style.display = 'none';
-                    currentSet.classList.remove('curso-fade-out');
-                }
-
-                // Preparar o novo conjunto para entrada
-                const targetSet = cursoSets[targetPage - 1];
-                if (targetSet) {
-                    targetSet.classList.add('curso-fade-in');
-                    targetSet.style.display = 'grid'; // Usar grid conforme definido no CSS
-
-                    // Forçar reflow
-                    void targetSet.offsetWidth;
-
-                    // 3) Animar a entrada do novo conjunto
-                    setTimeout(() => {
-                        targetSet.classList.remove('curso-fade-in');
-
-                        // Atualizar o estado da página
-                        currentCursoPage = targetPage;
-                        updateCursosButtonStyles();
-                    }, 50);
-                }
-            }, 400);
-        }
-
-        // Função para atualizar os estilos dos botões dos cursos
-        function updateCursosButtonStyles() {
-            const buttons = document.querySelectorAll('.curso-set-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            const activeBtn = document.querySelector(`.curso-set-btn[data-set="${currentCursoPage}"]`);
-            if (activeBtn) activeBtn.classList.add('active');
-        }
-
-        // Função para exibir a página inicial de cursos sem animação
-        function initCursosPage() {
-            const cursoSets = document.querySelectorAll('.curso-set');
-            cursoSets.forEach((set, index) => {
-                if (index === 0) {
-                    set.style.display = 'grid'; // Exibir o primeiro conjunto
-                } else {
-                    set.style.display = 'none'; // Ocultar os demais
-                }
-            });
-        }
-
-        // Função para configurar a paginação dos cursos
-        function setupCursosPagination() {
-            // Apenas configure se o container de botões existir
-            if (!cursosBtnsContainer) return;
-
-            // Limpar qualquer conteúdo existente
-            cursosBtnsContainer.innerHTML = '';
-
-            // Contar quantos conjuntos de cursos existem
-            const cursoSets = document.querySelectorAll('.curso-set');
-            const totalSets = cursoSets.length;
-
-            // Criar botões para cada conjunto
-            for (let i = 1; i <= totalSets; i++) {
-                const btn = document.createElement('button');
-                btn.innerText = i;
-                btn.classList.add('curso-set-btn');
-                btn.setAttribute('data-set', i);
-
-                btn.addEventListener('click', () => {
-                    showCursoSet(i);
-                });
-
-                cursosBtnsContainer.appendChild(btn);
-            }
-
-            // Inicializar a primeira página e marcar primeiro botão como ativo
-            initCursosPage();
-            updateCursosButtonStyles();
-        }
-
-        // Chama a função para configurar a paginação dos cursos quando o DOM estiver pronto
-        document.addEventListener('DOMContentLoaded', function() {
-            setupCursosPagination();
-        });
-
-        // Se o DOM já estiver carregado, configure imediatamente
-        if (document.readyState === 'interactive' || document.readyState === 'complete') {
-            setupCursosPagination();
-        }
-
-        // Função para alternar o menu móvel
-        function toggleMenu() {
-            const menuButton = document.querySelector('.menu-button');
-            const menuItems = document.querySelector('.menu-items');
-
-            // Alternar classe no botão
-            menuButton.classList.toggle('menu-open');
-
-            // Alternar visibilidade dos itens do menu
-            menuItems.classList.toggle('show');
-
-            // Log para depuração (pode remover depois)
-            console.log('Menu toggled, show class:', menuItems.classList.contains('show'));
-        }
-
-        // Mudar cor de fundo do menu ao rolar
-        window.addEventListener('scroll', function() {
-            const stickyMenu = document.getElementById('sticky-menu');
-            if (window.scrollY > 50) {
-                stickyMenu.classList.add('white-background');
-            } else {
-                stickyMenu.classList.remove('white-background');
-            }
-        });
-
-        // Fechar menu ao clicar em um link
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuLinks = document.querySelectorAll('.menu-items a');
-
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    const menuItems = document.querySelector('.menu-items');
-                    const menuButton = document.querySelector('.menu-button');
-
-                    // Em telas pequenas, fechar o menu após clicar
-                    if (window.innerWidth <= 768) {
-                        menuItems.classList.remove('show');
-                        menuButton.classList.remove('menu-open');
-                    }
-                });
-            });
-
-            // Verificar a largura da tela ao carregar e redimensionar
-            function checkScreenSize() {
-                const menuItems = document.querySelector('.menu-items');
-                const menuButton = document.querySelector('.menu-button');
-
-                if (window.innerWidth <= 768) {
-                    // Em telas pequenas, garantir que o menu esteja oculto por padrão
-                    menuItems.classList.remove('show');
-                    menuButton.classList.remove('menu-open');
-                }
-            }
-
-            // Verificar no carregamento
-            checkScreenSize();
-
-            // Verificar ao redimensionar
-            window.addEventListener('resize', checkScreenSize);
-        });
-
-        // Função para alternar o menu mobile
-        function toggleMenu() {
-            const stickyMenu = document.getElementById('sticky-menu');
-            stickyMenu.classList.toggle('menu-open');
-
-            // Impedir rolagem quando o menu está aberto
-            if (stickyMenu.classList.contains('menu-open')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        }
-
-        // Função para adicionar a classe white-background quando a página é rolada
-        document.addEventListener('DOMContentLoaded', function() {
-            // Referência ao menu
-            const stickyMenu = document.getElementById('sticky-menu');
-
-            // Configuração inicial ao carregar - verificar se precisa da classe white-background
-            if (window.scrollY > 50) {
-                stickyMenu.classList.add('white-background');
-            }
-
-            // Ouvinte de evento para detectar rolagem
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    stickyMenu.classList.add('white-background');
-                } else {
-                    stickyMenu.classList.remove('white-background');
-                }
-            });
-
-            // Fechar o menu ao clicar em um item do menu no mobile
-            const menuLinks = document.querySelectorAll('.menu-items a');
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        stickyMenu.classList.remove('menu-open');
-                        document.body.style.overflow = '';
-                    }
-                });
-            });
-
-            // Atualizar ao redimensionar a janela
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768 && stickyMenu.classList.contains('menu-open')) {
-                    stickyMenu.classList.remove('menu-open');
-                    document.body.style.overflow = '';
-                }
-            });
-
-            // Adicionar classe active ao item de menu correspondente à seção atual
-            function setActiveMenuItem() {
-                const sections = document.querySelectorAll('section[id]');
-                const scrollY = window.pageYOffset;
-
-                sections.forEach(section => {
-                    const sectionHeight = section.offsetHeight;
-                    const sectionTop = section.offsetTop - 100;
-                    const sectionId = section.getAttribute('id');
-
-                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-                        document.querySelector('.menu-items a[href*=' + sectionId + ']')?.classList.add('active');
-                    } else {
-                        document.querySelector('.menu-items a[href*=' + sectionId + ']')?.classList.remove('active');
-                    }
-                });
-            }
-
-            // Ativar detecção de seção ao rolar
-            window.addEventListener('scroll', setActiveMenuItem);
-
-            // Verificar seção atual ao carregar a página
-            setActiveMenuItem();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-
 </html>
