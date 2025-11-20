@@ -186,9 +186,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function showProjectPage(pageNumber) {
         projectCards.forEach(card => {
             if (card.getAttribute('data-page') === pageNumber.toString()) {
-                card.classList.add('active');
+                card.style.display = 'block';
+                card.style.opacity = '1'; // ← CORREÇÃO AQUI
             } else {
-                card.classList.remove('active');
+                card.style.display = 'none';
             }
         });
         
