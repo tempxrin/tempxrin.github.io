@@ -54,8 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // ==================== EFEITOS ==================== 
 document.addEventListener('DOMContentLoaded', function() {
     const texts = [
-        'Analista de Business Intelligence',
-        'Cofundador da Wize Analytics'
+        'Analytics Engineer'
     ];
     
     let textIndex = 0;
