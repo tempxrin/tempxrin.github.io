@@ -1,11 +1,56 @@
 // ── INIT — confirma que JS está rodando ──
 document.documentElement.classList.add('js-ready');
 
+<<<<<<< HEAD
 // ── THEME ──
 const html     = document.documentElement;
 const themeBtn = document.getElementById('themeBtn');
 const iconMoon = document.getElementById('iconMoon');
 const iconSun  = document.getElementById('iconSun');
+=======
+// ==================== EFEITOS ==================== 
+document.addEventListener('DOMContentLoaded', function() {
+    const texts = [
+        'Analytics Engineer'
+    ];
+    
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingText = document.getElementById('typingText');
+    const typingSpeed = 100;
+    const deletingSpeed = 50;
+    const pauseTime = 2000;
+    
+    function type() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            typingText.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typingText.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        
+        let speed = isDeleting ? deletingSpeed : typingSpeed;
+        
+        if (!isDeleting && charIndex === currentText.length) {
+            speed = pauseTime;
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+        }
+        
+        setTimeout(type, speed);
+    }
+    
+    if (typingText) {
+        setTimeout(type, 1000);
+    }
+});
+>>>>>>> a7a7a5cb9c7a35689872595c439611ae321bf642
 
 function setTheme(t) {
   html.setAttribute('data-theme', t);
@@ -35,6 +80,7 @@ burger.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
 });
 
+<<<<<<< HEAD
 document.querySelectorAll('.mm-link').forEach(l => {
   l.addEventListener('click', () => {
     burger.classList.remove('open');
@@ -106,3 +152,7 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav, { passive: true });
 updateActiveNav();
+=======
+console.log('%c João Daniel Temporin - Portfólio ', 'background: #3b82f6; color: #fff; font-size: 16px; padding: 10px; border-radius: 4px;');
+console.log('%c Desenvolvido com HTML, CSS e JavaScript ', 'color: #3b82f6; font-size: 12px;');
+>>>>>>> a7a7a5cb9c7a35689872595c439611ae321bf642
