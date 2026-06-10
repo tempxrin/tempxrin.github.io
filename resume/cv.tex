@@ -1,0 +1,225 @@
+% GitHub Repo and Documentation: https://github.com/celiobjunior/resume-template
+% Copyright © 2025 Celio B Junior. All rights reserved.
+% 
+% Licensed under the Apache License, Version 2.0 (the "License");
+% you may not use this file except in compliance with the License.
+% You may obtain a copy of the License at
+%
+%     http://www.apache.org/licenses/LICENSE-2.0
+%
+% This template follows best practices from README.md
+
+% Start of the LaTeX document: defines document type and format
+% a4paper = A4 size, 10pt = base font size
+\documentclass[a4paper,10pt]{article}
+
+% --- PACKAGES: BASE / LANGUAGE ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+
+% --- PACKAGES: LAYOUT / TYPOGRAPHY ---
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{tabularx}
+
+% --- PACKAGES: LINKS / BOOKMARKS ---
+\usepackage{hyperref}
+\usepackage{bookmark}
+\usepackage{xurl}
+
+% --- SETTINGS: MARGINS / SPACING ---
+\geometry{top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm}
+\setcounter{secnumdepth}{0}
+\setlist[itemize]{
+    leftmargin=0.75em,
+    itemsep=0.2em,
+    topsep=0.25em,
+    parsep=0em,
+    partopsep=0em
+}
+
+\pagestyle{empty}
+
+% --- SETTINGS: METADATA / LINKS ---
+\hypersetup{
+    pdftitle={CV Joao Daniel Temporin},
+    pdfauthor={Joao Daniel Temporin},
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    bookmarksdepth=2
+}
+
+% --- SETTINGS: TITLES ---
+\titleformat{\section}
+{\Large\bfseries}
+{}
+{0em}
+{}
+[\titlerule\vspace{0.5ex}]
+\titleformat{\subsection}
+{\normalsize\bfseries}
+{}
+{0em}
+{}
+\titlespacing*{\subsection}{0pt}{0.35em}{0.15em}
+
+% Macro for resume entries with PDF bookmark
+\newcounter{cventry}
+\newcommand{\cventry}[4]{%
+    \refstepcounter{cventry}%
+    \phantomsection%
+    \pdfbookmark[2]{#1}{cventry-\thecventry}%
+    \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}X@{}}
+    \textbf{#1} & #2 \\
+    \textit{#3} & \textit{#4} \\
+    \end{tabularx}
+}
+
+% Macro for simple text entries (used in Projects)
+\newcommand{\simpleentry}[2]{%
+    \noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedleft\arraybackslash}X@{}}
+    \textbf{#1} & \textit{#2} \\
+    \end{tabularx}
+}
+
+% --- START OF DOCUMENT ---
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    {\LARGE \textbf{JOÃO DANIEL TEMPORIN}} 
+    \\ [0.1cm]
+    Arapongas, PR (Remoto)
+    {\textbullet}
+    (43) 93618-0456 
+    {\textbullet}
+    \href{mailto:joaodtemporin@gmail.com}{joaodtemporin@gmail.com}
+    \\ [0.05cm]
+    \href{https://linkedin.com/in/joao-temporin/}{linkedin.com/in/joao-temporin} 
+    {\textbullet}
+    \href{https://github.com/tempxrin}{github.com/tempxrin}
+\end{center}
+
+% --- RESUMO ---
+\section{Resumo Profissional}
+    Analytics Engineer graduado em Administração de Empresas pela PUCPR, com sólida atuação na interseção entre negócios e tecnologia. 
+    \\ Como Analytics Engineer, especializo-me em transformar dados brutos em ativos analíticos prontos para consumo, focando na construção de pipelines robustos e modelagem de dados. Experiência prática no desenvolvimento de arquiteturas modernas de dados utilizando Python, SQL e dbt, além de integração com Airbyte, orquestração com Airflow e conteinerização com Docker. Atuação forte no ecossistema Cloud GCP (BigQuery, Looker, Compute Engine, Firebase, Functions), desenvolvimento de dashboards no Power BI em ambiente Fabric, na elaboração de pipelines no Databricks e na criação de aplicações web com Flutter e Dart, entregando soluções que democratizam o acesso a dados e sistemas.
+
+% ------
+
+\section{Experiência Profissional}
+
+    \cventry{Amazon Agrolog}{Londrina, PR}{Analytics Engineer}{Mai 2026 - Presente}
+        \begin{itemize}
+            \item Desenvolvimento de pipelines ELT end-to-end com dbt seguindo arquitetura Medallion (Bronze, Silver, Gold) para análises operacionais e logísticas do setor agro.
+            \item Orquestração de workflows com Apache Airflow para ingestão e transformação de dados de múltiplas fontes (MySQL, PostgreSQL, APIs e S3).
+            \item Infraestrutura de dados conteinerizada com Docker (Airflow, Airbyte, dbt), garantindo reprodutibilidade e isolamento dos ambientes.
+            \item Implementação de CI/CD com Git para deploy contínuo, aumentando rastreabilidade e segurança do código em produção.
+            \item Modelagem dimensional e transformações analíticas com SQL avançado (CTEs, Window Functions, otimização de queries).
+            \item Desenvolvimento de sistemas web com Flutter e Dart para atender demandas de todos os setores da empresa (operacional, administrativo, RH, comercial, transportes).
+            \item Criação de dashboards e relatórios interativos no Power BI conectados ao data warehouse corporativo para suporte à tomada de decisão.
+            \item Manutenção e evolução contínua do ecossistema de dados da empresa, com foco em governança, linhagem e qualidade dos dados.
+        \end{itemize}
+    
+    \cventry{Maxinutri Nutracêuticos}{Arapongas, PR}{Analytics Engineer}{Mai 2025 - Mai 2026}
+        \begin{itemize}
+            \item Desenvolvimento de pipelines ELT end-to-end com Python e SQL, garantindo integridade e disponibilidade de dados para todas as áreas de negócio.
+            \item Orquestração de +20 workflows em produção com Apache Airflow, assegurando execução estável da ingestão de múltiplas fontes (MySQL, PostgreSQL, APIs, Access, S3).
+            \item Conteinerização do ambiente de dados com Docker, mantendo +10 containers em produção (Airflow, Airbyte, dbt, Streamlit) para garantir isolamento e portabilidade.
+            \item Modelagem de dados com dbt seguindo arquitetura Medallion (Bronze, Silver, Gold), estabelecendo uma single source of truth documentada para a empresa.
+            \item Gestão de custos de licenciamento Power BI com Power Embedded (Capacidade Fabric), reduzindo despesas em 67\% e democratizando o acesso via portal SaaS.
+            \item Automação de processos (RPA) com Python, alcançando 95\% de redução no tempo operacional e eliminando retrabalho por erro humano.
+            \item Desenvolvimento de aplicações analíticas com Streamlit para democratizar o acesso a dados complexos para usuários não técnicos.
+            \item Implementação de CI/CD com Git para deploy contínuo, aumentando rastreabilidade e segurança do código em produção.
+        \end{itemize}
+
+    \cventry{Dechra Brasil}{Londrina, PR}{Analista de Business Intelligence Júnior}{Ago 2024 - Mai 2025}
+        \begin{itemize}
+            \item Desenvolvimento de +10 dashboards estratégicos no Power BI para 7 áreas de negócio (Comercial, Marketing, Financeiro, TI, E-commerce, Inteligência de Mercado e Diretoria).
+            \item Criação de queries complexas em SQL (CTEs, Joins, Window Functions) para extração e transformação de dados que serviram de base para relatórios executivos.
+            \item Automação de rotinas manuais com Python, reduzindo em 93\% o tempo gasto em processos repetitivos e eliminando risco de erros em reportes diários.
+            \item Análise de dados comerciais (Sell In/Sell Out) e de mercado (IQVIA) com estatística descritiva e regressão linear, apoiando o processo de forecast comercial.
+            \item Desenvolvimento de scripts de Web Scraping que eliminaram +2 horas de coleta manual diária, enriquecendo a base de dados de mercado.
+            \item Atuação como facilitador entre Dados e Negócios, traduzindo demandas em soluções analíticas e conduzindo treinamentos para usuários finais.
+        \end{itemize}
+
+    \cventry{Dechra Brasil}{Londrina, PR}{Estagiário de Business Intelligence}{Ago 2023 - Jul 2024}
+        \begin{itemize}
+            \item Desenvolvimento de dashboards no Power BI para áreas Comercial e Financeira, contribuindo para a padronização visual e definição de KPIs.
+            \item Extração e tratamento de dados via SQL e Power Query, aplicando técnicas de limpeza para garantir qualidade e consistência nas análises.
+            \item Análise exploratória de dados de Sell In/Sell Out para identificação de tendências comerciais, subsidiando a tomada de decisão do time de vendas.
+            \item Fortalecimento da governança da informação com documentação de processos analíticos e criação de dicionário de dados.
+        \end{itemize}
+
+    \cventry{AEBEL Londrina}{Londrina, PR}{Estagiário de TI}{Fev 2023 - Jul 2023}
+        \begin{itemize}
+            \item Gestão e priorização de +50 chamados internos mensais, garantindo resolução ágil de problemas técnicos para a operação.
+            \item Controle e consolidação de despesas financeiras da área de TI, estruturando processos que substituíram rotinas manuais por análises confiáveis.
+            \item Desenvolvimento de 3 dashboards no Power BI para monitoramento de custos e KPIs dos times de TI e Compras.
+            \item Gestão de acessos e permissões de sistemas internos, mantendo a segurança e a governança das informações.
+        \end{itemize}
+
+% ------
+
+\section{Competências Técnicas}
+    \begin{itemize}
+        \item \textbf{Engenharia de Dados:} Python, SQL, dbt (Modelagem), Apache Airflow (Orquestração), Airbyte, ETL/ELT, Databricks, PostgreSQL, DBeaver, RPA.
+        \item \textbf{Google Cloud:} Compute Engine, Storage, BigQuery, Firebase, Functions.
+        \item \textbf{Desenvolvimento:} Flutter, Dart, Streamlit.
+        \item \textbf{Dev \& Práticas:} Docker, Git, CI/CD.
+        \item \textbf{BI:} Power BI, Looker Studio.
+    \end{itemize}
+
+% ------
+
+\section{Formação Acadêmica}
+    \cventry{Pontifícia Universidade Católica do Paraná (PUCPR)}{Londrina, PR}{Bacharelado em Administração de Empresas}{Mar 2022 - Dez 2025}
+        \begin{itemize}
+            \item Bolsista integral pelo \textbf{Programa Universidade para Todos (Prouni)}.
+            \item \textbf{Campeão do Desafio PUCPR (2022)}: Liderança no desenvolvimento de solução de RH para engajamento de colaboradores para a Tata Consultancy Services (TCS), utilizando análise de dados para embasar a tomada de decisão.
+            \item Formação com foco na interseção entre Negócios e Analytics Engineering.
+            \item \textbf{Disciplinas-chave}: Estatística, Microeconomia, Macroeconomia, Business Intelligence, Gestão de Projetos e Análise Financeira.
+        \end{itemize}
+
+% ------
+
+\section{Projetos}
+    
+    \simpleentry{Portal da Verdade}{GCP · Compute Engine · Docker · Streamlit · Airflow · dbt · BigQuery · Firebase · HTML/CSS/JS}
+        \begin{itemize}
+            \item Plataforma completa de transparência de emendas parlamentares. Desenvolvida com Streamlit para ingestão de dados (upload para Storage e BigQuery), transformação e documentação com dbt, orquestração com Airflow e front-end em HTML/CSS/JS via Firebase.
+        \end{itemize}
+    
+    \simpleentry{Comparativo Salarial}{BigQuery · Python · Streamlit · Matplotlib · Pandas}
+        \begin{itemize}
+            \item Aplicação web interativa para análise de dados do CAGED/IBGE, permitindo a comparação de renda por cargo e região. Desenvolvida com Python e Streamlit, com dados armazenados no BigQuery para alta performance nas consultas.
+        \end{itemize}
+
+    \simpleentry{Efetivo de Rebanhos}{Storage · BigQuery · Looker Studio}
+        \begin{itemize}
+            \item Pipeline de dados para análise do efetivo de rebanhos brasileiros (IBGE), armazenamento em Cloud Storage, modelagem no BigQuery e visualização interativa no Looker Studio para insights agropecuários.
+        \end{itemize}
+
+    \simpleentry{Calculadora do Índice de Gini}{Streamlit · Pandas · NumPy}
+        \begin{itemize}
+            \item Ferramenta interativa para cálculo e visualização do índice de Gini, demonstrando aplicação de estatística e álgebra linear com Python para análise de desigualdade socioeconômica.
+        \end{itemize}
+
+    \simpleentry{Análise Preditiva}{Python · Estatística · Scikit-Learn · Pandas}
+        \begin{itemize}
+            \item Projeto de modelagem preditiva utilizando técnicas de Machine Learning e estatística para previsão de cenários, focando no tratamento de dados e avaliação de modelos com Pandas e Scikit-Learn.
+        \end{itemize}
+
+    \simpleentry{Mapa do Índice de Gini}{Python · Pandas · Geopandas · Matplotlib}
+        \begin{itemize}
+            \item Visualização de dados georreferenciados para análise espacial da desigualdade social. Utilização de Geopandas para manipulação de dados geográficos e geração de mapas interativos.
+        \end{itemize}
+
+\end{document}
