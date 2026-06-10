@@ -1,2 +1,7 @@
-.aux
-.log
+resume/*.aux
+resume/*.log
+resume/*.out
+resume/*.toc
+resume/*.synctex.gz
+resume/*.fls
+resume/*.fdb_latexmk
