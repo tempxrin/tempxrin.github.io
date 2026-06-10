@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.10)  10 JUN 2026 15:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.6.10)  10 JUN 2026 15:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,11 +501,11 @@ L3 programming layer <2025-12-24>
 Here is how much of TeX's memory you used:
  12958 strings out of 467871
  212986 string characters out of 5410596
- 693005 words of memory out of 5000000
+ 693996 words of memory out of 5000000
  41693 multiletter control sequences out of 15000+600000
  633746 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,9n,79p,1200b,593s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 69i,9n,79p,1200b,595s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\João Daniel Temporin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappe
 n/ec/dpi600\tcti1000.pk> <C:\Users\João Daniel Temporin\AppData\Local\MiKTeX\f
 onts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\João Daniel Temporin\
@@ -516,9 +516,9 @@ r/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\João Daniel Temporin\AppData\Local
 \MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\João Daniel 
 Temporin\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk>
 Output written on "C:\Users\João Daniel Temporin\Documents\GitHub\tempxrin.git
-hub.io\resume\cv.pdf" (3 pages, 100123 bytes).
+hub.io\resume\cv.pdf" (3 pages, 100463 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
+ 342 PDF objects out of 1000 (max. 8388607)
  27 named destinations out of 1000 (max. 500000)
  6233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
